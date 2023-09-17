@@ -1,15 +1,15 @@
 # opensource COBOL Series
-## [opensource COBOL Programmer’s Guide (日本語マニュアル)](/guides/opensourceCOBOLProgrammersGuide100.pdf)
+## opensource COBOL Programmer’s Guide (日本語マニュアル)
 
 2023年8月31日(木)、『opensource COBOL Programmer's Guide』を公開しました。長い間、多くのユーザー様からご要望のありましたCOBOL文法の完全日本語マニュアルです（約300ページのPDF）。大変お待たせいたしました。
 
-https://opensourcecobol.github.io/guides/opensourceCOBOLProgrammersGuide100.pdf
+[https://opensourcecobol.github.io/guides/opensourceCOBOLProgrammersGuide100.pdf](/guides/opensourceCOBOLProgrammersGuide100.pdf)
 
 <img width="300" src="https://github.com/opensourcecobol/opensourcecobol.github.io/assets/5810740/d8108368-9a9d-4df8-8cd9-9873d0f5d01d">
 
 原著はGary Cultlerさんの『OpenCOBOL Programmer's Guide』です。私たちの opensource COBOL のフォーク元である OpenCOBOL のCOBOL文法や使い方のマニュアルです。
 
-https://gnucobol.sourceforge.io/guides/OpenCOBOL%20Programmers%20Guide.pdf
+[https://gnucobol.sourceforge.io/guides/OpenCOBOL%20Programmers%20Guide.pdf](https://gnucobol.sourceforge.io/guides/OpenCOBOL%20Programmers%20Guide.pdf)
 
 ライセンスは、GNU Free Documentation License(FDL)です。日本語のCOBOLマニュアルがオープンソースのライセンスで公開されるのは業界初です。COBOL開発の現場での利用はもちろん、レガシー対策で一層需要が高まるCOBOLスキルの学習教材としても、自由にご利用いただけます。
 
