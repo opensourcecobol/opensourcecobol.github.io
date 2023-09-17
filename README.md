@@ -1,13 +1,13 @@
-# opensource COBOL Series
-## opensource COBOL Programmer’s Guide (日本語マニュアル)
+# opensource COBOL Programmer’s Guide (COBOLマニュアル 日本語版)
 
-2023年8月31日(木)、『opensource COBOL Programmer's Guide』を公開しました。長い間、多くのユーザー様からご要望のありましたCOBOL文法の完全日本語マニュアルです（約300ページのPDF）。大変お待たせいたしました。
+2023年8月31日(木)、[『opensource COBOL Programmer's Guide』](/guides/opensourceCOBOLProgrammersGuide100.pdf)
+を公開しました。長い間、多くのユーザー様からご要望のありましたCOBOL文法の完全日本語マニュアルです（約300ページのPDF）。大変お待たせいたしました。
 
 [https://opensourcecobol.github.io/guides/opensourceCOBOLProgrammersGuide100.pdf](/guides/opensourceCOBOLProgrammersGuide100.pdf)
 
-<img width="300" src="https://github.com/opensourcecobol/opensourcecobol.github.io/assets/5810740/d8108368-9a9d-4df8-8cd9-9873d0f5d01d">
+[<img width="300" src="https://github.com/opensourcecobol/opensourcecobol.github.io/assets/5810740/d8108368-9a9d-4df8-8cd9-9873d0f5d01d">](/guides/opensourceCOBOLProgrammersGuide100.pdf)
 
-原著はGary Cultlerさんの『OpenCOBOL Programmer's Guide』です。私たちの opensource COBOL のフォーク元である OpenCOBOL のCOBOL文法や使い方のマニュアルです。
+原著はGary Cultlerさんの[『OpenCOBOL Programmer's Guide』](https://gnucobol.sourceforge.io/guides/OpenCOBOL%20Programmers%20Guide.pdf)です。私たちの opensource COBOL のフォーク元である OpenCOBOL のCOBOL文法や使い方のマニュアルです。
 
 [https://gnucobol.sourceforge.io/guides/OpenCOBOL%20Programmers%20Guide.pdf](https://gnucobol.sourceforge.io/guides/OpenCOBOL%20Programmers%20Guide.pdf)
 
