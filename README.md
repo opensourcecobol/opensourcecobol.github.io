@@ -1,6 +1,6 @@
 # opensource COBOL Programmer’s Guide (COBOLマニュアル 日本語版)
 
-COBOL文法の完全日本語マニュアル[『opensource COBOL Programmer's Guide』](/guides/opensourceCOBOLProgrammersGuide.pdf)を公開しました。(2023/7/31 初版公開)
+COBOL文法の完全日本語マニュアル[『opensource COBOL Programmer's Guide』](/guides/opensourceCOBOLProgrammersGuide.pdf)を公開しました。(2023/8/31 初版公開)
 
 [<img width="300" src="https://github.com/opensourcecobol/opensourcecobol.github.io/assets/5810740/d8108368-9a9d-4df8-8cd9-9873d0f5d01d">](/guides/opensourceCOBOLProgrammersGuide.pdf)
 
@@ -11,7 +11,7 @@ COBOL文法の完全日本語マニュアル[『opensource COBOL Programmer's Gu
 ## 改訂履歴
 |版|発行日|改訂詳細|
 |-|-|-|
-|初版 v1.0.0|2023/7/31|原文”OpenCOBOL 1.1 Programmer’s Guide”を参考に日本語翻訳マニュアルを作成。|
+|初版 v1.0.0|2023/8/31|原文”OpenCOBOL 1.1 Programmer’s Guide”を参考に日本語翻訳マニュアルを作成。|
 |v1.1.0|2023/9/21|誤字や翻訳漏れを修正。|
 |v1.2.0|2023/10/16|条件名の訳語を一部修正。|
 |v2.0.0|2024/2/29|通貨記号の既定値を「＄」から「￥」に変更。|
