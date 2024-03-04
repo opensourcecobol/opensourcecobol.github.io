@@ -1,10 +1,14 @@
 # opensource COBOL Programmer’s Guide (COBOLマニュアル 日本語版)
 
-COBOL文法の完全日本語マニュアル[『opensource COBOL Programmer's Guide』](/guides/opensourceCOBOLProgrammersGuide.pdf)を公開しました。(2023/8/31 初版公開)
+COBOL文法の完全日本語マニュアル[『opensource COBOL Programmer's Guide』](/guides/opensourceCOBOLProgrammersGuide.pdf)を公開しています。
+
+2021年より始動した本プロジェクトは、OSSコンソーシアム オープンCOBOLソリューション部会が活動の一環として、マニュアルの翻訳・執筆を進めています。
+初版は原著をそのまま翻訳した内容です。第二版では、opensource COBOL で追加実装した日本語機能や新機能の説明を追加しました。
+第三版以降で、新製品である opensource COBOL 4J についての説明を追加していく予定です。
 
 [<img width="300" src="https://github.com/opensourcecobol/opensourcecobol.github.io/assets/5810740/d8108368-9a9d-4df8-8cd9-9873d0f5d01d">](/guides/opensourceCOBOLProgrammersGuide.pdf)
 
-原著はGary Cultlerさんの[『OpenCOBOL Programmer's Guide』](https://gnucobol.sourceforge.io/guides/OpenCOBOL%20Programmers%20Guide.pdf)です。私たちの opensource COBOL のフォーク元である OpenCOBOL のCOBOL文法や使い方のマニュアルです。
+原著はGary Cultlerさんの[『OpenCOBOL Programmer's Guide』](https://gnucobol.sourceforge.io/guides/OpenCOBOL%20Programmers%20Guide.pdf)です。私たちの opensource COBOLのフォーク元である OpenCOBOLのCOBOL文法や使い方のマニュアルです。
 
 ライセンスは、GNU Free Documentation License(FDL)です。日本語のCOBOLマニュアルがオープンソースのライセンスで公開されるのは業界初です。COBOL開発の現場での利用はもちろん、レガシー対策で一層需要が高まるCOBOLスキルの学習教材としても、自由にご利用いただけます。
 
