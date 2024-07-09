@@ -13,7 +13,7 @@ COBOL文法の完全日本語マニュアル[『opensource COBOL Programmer's Gu
 
 ライセンスは、GNU Free Documentation License(FDL)です。日本語のCOBOLマニュアルがオープンソースのライセンスで公開されるのは業界初です。COBOL開発の現場での利用はもちろん、レガシー対策で一層需要が高まるCOBOLスキルの学習教材としても、自由にご利用いただけます。
 
-目次は[こちら](TOC.md)です  
+目次は[こちら](/markdown/TOC.md)です  
 
 ## 改訂履歴
 
