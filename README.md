@@ -1,3 +1,5 @@
+<title>実験です</title>
+
 # opensource COBOL Programmer’s Guide (COBOLマニュアル 日本語版)
 
 COBOL文法の完全日本語マニュアル[『opensource COBOL Programmer's Guide』](/guides/opensourceCOBOLProgrammersGuide.pdf)を公開しています。
@@ -40,3 +42,5 @@ COBOL文法の完全日本語マニュアル[『opensource COBOL Programmer's Gu
 |||「8.3.1. 「名前による呼び出し」ルーチン 」に「8.3.1.1. CALL “C$CALLEDBY” USING program-name GIVING status」「8.3.1.7. CALL “C$LIST-DIRECTORY” USING item-1, item-2, item-3」「8.3.1.32. CALL “CBL_OC_KEISEN” USING item-1」を追加。|
 
 以上
+
+<footer>フッターです</footer>
