@@ -15,7 +15,7 @@ COBOL文法の完全日本語マニュアル[『opensource COBOL Programmer's Gu
 
 ## 目次
 
-目次は[こちら](/markdown/TOC.md)です  
+目次は[こちら](/markdown/TOC.md)です。
 
 ## 改訂履歴
 
