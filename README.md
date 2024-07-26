@@ -1,5 +1,3 @@
-<title>実験です</title>
-
 # opensource COBOL Programmer’s Guide (COBOLマニュアル 日本語版)
 
 COBOL文法の完全日本語マニュアル[『opensource COBOL Programmer's Guide』](/guides/opensourceCOBOLProgrammersGuide.pdf)を公開しています。
@@ -43,4 +41,3 @@ COBOL文法の完全日本語マニュアル[『opensource COBOL Programmer's Gu
 
 以上
 
-<footer>フッターです</footer>
