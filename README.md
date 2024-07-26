@@ -15,7 +15,7 @@ COBOL文法の完全日本語マニュアル[『opensource COBOL Programmer's Gu
 
 ## 目次
 
-目次は[こちら](/markdown/TOC.md)です  
+目次は[こちら](/markdown/TOC.md)です。  
 
 ## 改訂履歴
 
@@ -40,4 +40,3 @@ COBOL文法の完全日本語マニュアル[『opensource COBOL Programmer's Gu
 |||「8.3.1. 「名前による呼び出し」ルーチン 」に「8.3.1.1. CALL “C$CALLEDBY” USING program-name GIVING status」「8.3.1.7. CALL “C$LIST-DIRECTORY” USING item-1, item-2, item-3」「8.3.1.32. CALL “CBL_OC_KEISEN” USING item-1」を追加。|
 
 以上
-
