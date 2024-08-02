@@ -1,0 +1,94 @@
+#categories {
+	width: 100%;
+}
+
+#categories h1 {
+	@include page_title();
+}
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* Style the categorie list */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+
+
+.categories_all1 {
+	@include showlinks(1);
+}
+
+.categories_all2 {
+	@include showlinks(2);
+}
+
+.categories_all3 {
+	@include showlinks(3);
+}
+
+.categories_all4 {
+	@include showlinks(4);
+}
+
+.categories_all5 {
+	@include showlinks(5);
+}
+
+@media screen and (max-width: $large) {
+	.categories_all {
+		@include showlinks(1);
+	}
+}
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* Only show posts when categorie is selected */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+
+.category_posts {
+	display: none;
+
+	h2 {
+		margin-bottom: 2em;
+		text-transform: lowercase;
+	}
+}
+
+.category_posts:target {
+	display: block;
+}
+
+/* Hide the anchor from the URL bar */
+#categories :target::before {
+	content: "";
+	display: block;
+	height: 100px;
+	margin-top: -100px;
+	visibility: hidden;
+}
+
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* results Style */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+
+
+.categories_findresult {
+	@include findresults();
+}
+
+.categories_date {
+	@include findresults_date();
+}
+
+.categories_day {
+	@include findresults_day();
+}
+
+
+.categories_summary {
+	@include findresults_summary();
+}
+

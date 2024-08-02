@@ -1,0 +1,56 @@
+header nav {
+	background-color: $primary-color;
+	width: fit-content;
+	margin: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 0;
+	padding-bottom: 10px;
+	border-radius: 0 0 0.5em 0.5em;
+	transform: translateY(-1px);
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  min-width: fit-content;
+}
+
+nav li {
+	display: inline-block;
+}
+
+nav li a {
+	@include links($background-color);
+	text-transform: uppercase;
+	letter-spacing: -1.5px;
+	font-size: 0.8em;
+}
+
+/* Active Link */
+.navi_current {
+	color: $lighter;
+	font-weight: bold;
+}
+
+/* Line above the Navi */
+#header_hr {
+	border-bottom: 0;
+	border-top: 0.5em solid $primary-color;
+	border-left: 0;
+	border-right: 0;
+	width: 100%;
+	position: sticky;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+
+@media (width >= $small) and (max-width: $large) {
+	header {
+		font-size: 1em;
+	}
+}

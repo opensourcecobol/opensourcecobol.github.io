@@ -1,0 +1,74 @@
+---
+layout: default
+---
+
+<main id="tags">
+  <section>
+    <h1>{% if site.data.configurable_lables.tags_title %}{{site.data.configurable_lables.tags_title}}{% else %}Tags{% endif %}</h1>
+
+    <!-- Capture and sort tags by count -->
+    {% capture site_tags %}
+      {% for tag in site.tags %}
+        {{ tag[1].size | plus: 1000 }}&#x1F;{{ tag | first }}
+        {% unless forloop.last %}&#x1E;{% endunless %}
+      {% endfor %}
+    {% endcapture %}
+    {% assign sortedTags = site_tags | split: '&#x1E;' | sort | reverse %}
+
+    {% if sortedTags.size > 0 %}
+    <!-- Show all tags sorted by count -->
+    <div class="tags_all tags_all{% if site.layouts.tags.columns and site.layouts.tags.columns >= 1 and site.layouts.tags.columns <= 5 %}{{site.layouts.tags.columns}}{% else %}4{% endif %}">
+      <ul>
+        {% for tag in sortedTags %}
+          {% assign tagParts = tag | split: '&#x1F;' %}
+          {% assign tagName = tagParts[1] %}
+          {% assign tagCount = tagParts[0] | minus: 1000 %}
+          <li>
+            <a href="#{{ tagName }}">
+              <span class="tag_linktitle">{{ tagName }}</span>
+              <span class="tag_count">{{ tagCount }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% else %}
+    <!-- Display an empty list when sortedTags is empty -->
+    <div>
+      <ul>
+        <li>{% if site.data.configurable_lables.tags_found %}{{site.data.configurable_lables.tags_found}}{% else %}No tags available.{% endif %}</li>
+      </ul>
+    </div>
+    {% endif %}
+
+
+    <!-- Show posts for selected tag -->
+    <div class="tags_results">
+      {% if site.data.configurable_lables.tags_found %}{{site.data.configurable_lables.tags_found}}{% else %}Found Posts per selected Tag{% endif %}
+      <br /><br /><br /><br />
+
+      {% for tag in site.tags %}
+        <div id="{{ tag[0] }}" class="tag_posts">
+          <h2>{{ tag[0] }}</h2>
+
+          {% for post in tag[1] %}
+            <div class="tags_findresult">
+
+              <a href="{{ site.baseurl }}{{ post.url }}" class="tags_date">
+                <i class="tags_day">{{ post.date | date: "%d" }}</i>
+                <span>{{ post.date | date: "%b/%Y" }}</span>
+              </a>
+
+              <span class="tags_summary">
+                <h3>
+                  <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                </h3>
+                {{ post.content | markdownify | strip_html | truncatewords: 50 }}
+              </span>
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+</main>

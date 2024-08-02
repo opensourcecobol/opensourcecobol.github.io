@@ -1,0 +1,88 @@
+---
+layout: default
+---
+
+<main id="post">
+	<article>
+
+		{% if page.display_toc %}
+		<div class="toc">
+			<input type="checkbox" id="tocMenuButton">
+			<label for="tocMenuButton" id="tocMenuButtonLabel">
+			  <i class="fa fa-bars"></i>
+			</label>
+			<div id="tocContainer">
+				<h1>TOC</h1>
+		 		{% include toc.html html=content %}
+			</div>
+		</div>
+		{% endif %}
+
+		<div class="grid">
+			
+
+			{% if page.no_header != true %}
+			<div class="post_header">
+				<h1>{{page.title}}</h1>
+				<h3>{{page.subtitle}}</h3>
+				
+				
+				{% if page.show_supplements != false %}
+				  <p class="supplements">
+				    <span>
+				      <i class="fa fa-calendar"></i> {{ page.date | date: "%B %d, %Y" }}
+				    </span>
+				    <span class="supplements-sep"></span>
+				    <span class="reading-time" title="Estimated read time">
+				      {% include read_time.html %}
+				    </span>
+				    {% if page.categories != nil and page.categories.size > 0 %}
+				      <span class="supplements-sep"></span>
+				      <span class="supplements-category">
+				        <i class="fa fa-bars"></i>
+				        {% for category in page.categories %}
+				          <a href="{{ site.baseurl }}/categories#{{ category | slugify }}">{{ category }}</a>{% if forloop.last == false %},{% endif %}
+				        {% endfor %}
+				      </span>
+				    {% endif %}
+				    {% if page.tags != nil and page.tags.size > 0 %}
+				      <span class="supplements-sep"></span>
+				      <span>
+				        <i class="fa fa-tags"></i>
+				        {% for tag in page.tags %}
+				          <a href="{{ site.baseurl }}/tags#{{ tag | slugify }}">{{ tag }}</a>{% if forloop.last == false %},{% endif %}
+				        {% endfor %}
+				      </span>
+				    {% endif %}
+				    {%- if page.last_modified_at -%}
+				      <br /> <br />
+				      <span class="last_modified_at">{% if site.data.configurable_lables.last_modified_at %}{{site.data.configurable_lables.last_modified_at}}{% else %}Last Modified at:{% endif %} {{ page.last_modified_at }}</span>
+				    {% endif %}
+				  </p>
+				{% endif %}
+			</div>
+			{% endif %}
+
+			<div class ="post_content">
+				{{content}}
+				{% if page.toTop != false %}
+				<a href="#" id="toTopButton">
+				  <i class="fa fa-arrow-circle-o-up"></i>
+				</a>
+				{% endif %}
+			</div>
+
+			{% if page.display_toc2 %}
+			<div id="toc2">
+			 	{% include toc.html html=content %}
+			</div>
+			{% endif %}
+
+
+		</div>
+
+	</article>
+	{% if page.comments_id %}
+  		{% include comments.html issue_id=page.comments_id %}
+	{% endif %}
+</main>

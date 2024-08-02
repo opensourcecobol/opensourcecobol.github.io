@@ -1,0 +1,106 @@
+/*
+<main id="post">
+<section id="comments">
+<div class="comment-actions">
+    <h2>
+    <a>
+    <i>
+</div>
+<div id="comments-wrapper">
+    <ol>
+        <li class="comment">
+            <div class="commenter">
+                <img>
+                <a>
+                <div class="date-posted">
+                <span class="author-badge">
+            <div class="comment-body">
+                <p>
+        <li class="comment">
+</div>
+</section>
+</main>
+
+$primary-color:#032539;
+$secondary-color: #1c768f;
+$background-color: #fbf3f2;
+$accent-color: #fa991c;
+*/
+
+
+#comments {
+    word-break: keep-all;
+}
+
+.comment-actions {
+    display: flex;
+    align-items: center;
+
+
+    a {
+        background-color: $primary-color;
+        color: $background-color;
+        padding: 12px;
+        margin-left: auto;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+}
+
+#comments-wrapper {
+
+    ol {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .commenter {
+
+        display: flex;
+        align-items: center;
+
+        img {
+            border-radius: 50%;
+            width: 50px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        a {
+            font-weight: bold;
+            color: $primary-color;
+            margin-right: 10px;
+        }
+
+        .date-posted {
+            font-style: italic;
+        }
+
+        .author-badge {
+            margin-left: auto;
+            padding: 8px;
+            background-color: $secondary-color;
+            border-radius: 24px;
+            font-weight: bold;
+        }
+    }
+
+    .comment-body {
+        margin-left: 70px; //50px width of image + 10px margin +10px???
+    }
+
+}
+
+
+@media screen and (max-width: $large) {
+    .comment-actions, #comments-wrapper .commenter, #comments-wrapper .commenter .date-posted {
+        display: block;
+        font-size: 0.9em;
+    }
+
+    #comments-wrapper .commenter .date-posted {
+        margin-bottom: 16px;
+        margin-top: 8px;
+    }
+
+}

@@ -1,0 +1,30 @@
+/* Breakpoint widths */
+$small: 320px !default;
+$medium: 768px !default;
+$large: 1024px !default;
+$xlarge: 1280px !default;
+
+// @media only screen and (max-width: $small)
+
+$darker: #060606;
+$dark: #404040;
+$mid: #9c9b9b;
+$light: #fafafa;
+$lighter: #fff;
+
+$orange: #fa991c;
+$lightgrey: #fbf3f2;
+$lightblue: #1c768f;
+$darkblue: #032539;
+
+$primary-color:#032539;
+$secondary-color: #1c768f;
+$background-color: #fbf3f2;
+$accent-color: #fa991c;
+
+@media (prefers-color-scheme: dark) {
+    $primary-color: #fbf3f2;
+    $secondary-color: #1c768f;
+    $background-color: #032539;
+    $accent-color: #fa991c;
+}

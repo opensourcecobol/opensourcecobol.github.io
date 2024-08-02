@@ -1,0 +1,87 @@
+#archive {
+	width: 100%;
+}
+
+#archive h1 {
+	@include page_title();
+}
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* Style the archive list */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+
+
+.archive_all_years1 {
+	@include showlinks(1);
+}
+
+.archive_all_years2 {
+	@include showlinks(2);
+}
+
+.archive_all_years3 {
+	@include showlinks(3);
+}
+
+.archive_all_years4 {
+	@include showlinks(4);
+}
+
+@media screen and (max-width: $large) {
+.archive_all_years {
+	@include showlinks(1);
+	}
+}
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* Only show posts when archive is selected */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+
+.archive_year {
+	display: none;
+
+	h2 {
+		margin-bottom: 2em;
+	}
+}
+
+.archive_year:target {
+	display: block;
+}
+
+/* Hide the anchor from the URL bar */
+#archive :target::before {
+	content: "";
+	display: block;
+	height: 100px;
+	margin-top: -100px;
+	visibility: hidden;
+}
+
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* results Style */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+
+
+.archive_findresults {
+	@include findresults();
+}
+
+.archive_date {
+	@include findresults_date();
+}
+
+.archive_day {
+	@include findresults_day();
+}
+
+.archive_summary {
+	@include findresults_summary();
+}

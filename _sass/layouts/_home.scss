@@ -1,0 +1,106 @@
+#home {
+	width: 100%;
+}
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* main - cards layout (each post) */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+// Supplements = Date + Tags
+
+#home {
+	.article-divider {
+		width: 98vw;
+		height: 0px;
+		border-top: 1px dashed $secondary-color;
+		margin: 4em 0;
+		position: relative;
+		left: -20%;
+	}
+}
+
+.single_article {
+	h3 {
+		//font-family: Inter;
+		font-size: 2em;
+		font-weight: 700;
+		letter-spacing: 2px;
+		margin: 0;
+		color: $primary-color;
+	}
+
+	a {
+		color: $secondary-color;
+		text-decoration: none;
+
+		&:hover {
+			@include hover();
+		}
+
+		&:hover h3 {
+			@include hover();
+		}
+	}
+
+	i {
+		color: $primary-color;
+	}
+
+	.summary {
+		margin-top: 2em;
+	}
+
+	.supplements-sep::before {
+	    content: "\2022";
+	    padding-left: 0.5em;
+	    padding-right: 0.5em;
+	}
+}
+
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* Pagination (next + previous Buttons on the bottom)
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+.pagination {
+	display: flex;
+	justify-content: space-between;
+	color: $primary-color;
+
+	a {
+		color: $primary-color;
+	}
+
+	span {
+		&:hover {
+			@include hover();
+		}
+	}
+
+
+	.page_count {
+		margin: 0 auto;
+	}
+
+	.spannext {
+		padding: 5px 15px;
+		border: 1px solid $primary-color;
+		height: 1em;
+	}
+
+	.spanprevious {
+		padding: 5px 15px;
+		border: 1px solid $primary-color;
+		height: 1em;
+	}
+
+	.next {
+		float: right;
+	}
+
+	.previous {
+		float: left;
+	}
+}

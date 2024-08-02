@@ -1,0 +1,78 @@
+---
+layout: default
+---
+
+<main id="archive">
+  <section>
+    <h1>{% if site.data.configurable_lables.archive_title %}{{site.data.configurable_lables.archive_title}}{% else %}Archive{% endif %}</h1>
+
+    {% if site.posts.size > 0 %}
+    <!-- show all years -->
+    <div class="archive_all_years archive_all_years{% if site.layouts.archive.columns and site.layouts.archive.columns >= 1 and site.layouts.archive.columns <= 5 %}{{site.layouts.archive.columns}}{% else %}2{% endif %}">
+      <ul>
+        {% assign postsByYear = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}
+        {% for year in postsByYear %}
+          <li>
+            <a href="#{{ year.name }}">
+              <span class="archive_linktitle">{{ year.name }}</span>
+              <span class="archive_yearcount">{{ year.items | size }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% else %}
+    <!-- Display an empty list when there are no posts -->
+    <div class="archive_all_years">
+      <ul>
+        <li>{% if site.data.configurable_lables.archive_found %}{{site.data.configurable_lables.archive_found}}{% else %}No archive years available.{% endif %}</li>
+      </ul>
+    </div>
+    {% endif %}
+
+
+
+
+    <!-- show posts for certain year -->
+    <div class="archive_results">
+    {% if site.data.configurable_lables.archive_found %}{{site.data.configurable_lables.archive_found}}{% else %}Found Posts per selected Year{% endif %}
+    <br/><br/><br/><br/>
+
+    {% assign postsByYear = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}
+    {% for year in postsByYear %}
+      <div id="{{ year.name }}" class="archive_year" >
+        <h2>{{ year.name }}</h2>
+
+        {% for post in year.items %}
+          {% if post.id %}
+            {% assign title = post.title | markdownify | strip_html %}
+          {% else %}
+            {% assign title = post.title %}
+          {% endif %}
+
+            <div class="archive_findresults">
+
+             
+
+              <a class="archive_date" href="{{ site.baseurl }}{{ post.url }}">
+                <i class="archive_day">{{ post.date | date: "%d" }}</i>
+                <span>{{ post.date | date: "%b/%Y" }}</span>
+              </a>
+
+              <span class="archive_summary">
+                <h3>
+                  <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                </h3>
+                {{ post.content | markdownify | strip_html | truncatewords: 50 }}
+              </span>
+
+            </div>
+
+        {% endfor %}
+
+      </div>
+    {% endfor %}
+    </div>
+
+  </section>
+</main>

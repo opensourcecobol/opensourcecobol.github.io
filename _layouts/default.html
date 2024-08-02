@@ -1,22 +1,26 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en-US" }}">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+    Horizon Flow Theme 0.0.1
+    Copyright 2023 Markus Schiller - https://papierkorp.github.io/
+    Free for personal and commercial use under the MIT license
+    https://github.com/papierkorp/jekyll-theme-horizon-flow/blob/main/LICENSE.txt
+-->
+<html>
+    <head lang="{{ site.locale | default: "en" }}">
+        {% seo %}
+        {% feed_meta %}
+        <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+        <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+        <link rel="canonical" href="{{ page.url | replace:'index.html', '' | absolute_url }}{{ site.baseurl }}">
+    </head>
 
-{% seo %}
-    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-    {% include head-custom.html %}
-  </head>
-  <body>
-    <div class="container-lg px-3 my-5 markdown-body">
+    <body>
+        <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+        {% include header.html %}
 
+        {{ content }}
 
-      {{ content }}
+        {% include footer.html %}
+    </body>
 
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-    <script>anchors.add();</script>
-  </body>
 </html>

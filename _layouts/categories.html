@@ -1,0 +1,79 @@
+---
+layout: default
+---
+
+<main id="categories">
+  <section>
+    <h1>{% if site.data.configurable_lables.categories_title %}{{site.data.configurable_lables.categories_title}}{% else %}Categories{% endif %}</h1>
+
+    <!-- Capture and sort categories by count -->
+    {% capture site_categories %}
+      {% for category in site.categories %}
+        {{ category[1] | size | plus: 1000 }}&#x1F;{{ category[0] }}
+        {% unless forloop.last %}&#x1E;{% endunless %}
+      {% endfor %}
+    {% endcapture %}
+    {% assign sortedCategories = site_categories | split: '&#x1E;' | sort | reverse %}
+
+    {% if sortedCategories.size > 0 %}
+    <!-- Show all categories sorted by count -->
+    <div class="categories_all categories_all{% if site.footer_sidebar.categories.columns and site.footer_sidebar.categories.columns >= 1 and site.footer_sidebar.categories.columns <= 5 %}{{site.footer_sidebar.categories.columns}}{% else %}3{% endif %}">
+      <ul>
+        {% for category in sortedCategories %}
+          {% assign categoryParts = category | split: '&#x1F;' %}
+          {% assign categoryName = categoryParts[1] %}
+          {% assign categoryCount = categoryParts[0] | minus: 1000 %}
+          <li>
+            <a href="#{{ categoryName }}">
+              <span class="category_linktitle">{{ categoryName }}</span>
+              <span class="category_count">{{ categoryCount }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% else %}
+    <!-- Display an empty list when sortedCategories is empty -->
+    <div class="categories_all">
+      <ul>
+        <li>{% if site.data.configurable_lables.categories_found %}{{site.data.configurable_lables.categories_found}}{% else %}No categories available.{% endif %}</li>
+      </ul>
+    </div>
+    {% endif %}
+
+
+
+
+    <!-- show posts for certain categorie -->
+    <div class="categories_results">
+      {% if site.data.configurable_lables.categories_found %}{{site.data.configurable_lables.categories_found}}{% else %}Found Posts per selected Categorie{% endif %}
+      <br/><br/><br/><br/>
+
+      {% for category in site.categories %}
+        <div id="{{ category[0] }}" class="category_posts">
+          <h2>{{category[0]}}</h2>
+
+          {% for post in category[1] %}
+            <div class="categories_findresult">
+              <a href="{{ site.baseurl }}{{ post.url }}" class="categories_date">
+                <i class="categories_day">{{ post.date | date: "%d" }}</i>
+                <span>{{ post.date | date: "%b/%Y" }}</span>
+              </a>
+
+              <span class="categories_summary">
+                <h3>
+                  <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                </h3>
+                {{ post.content | markdownify | strip_html | truncatewords: 50 }}
+              </span>
+
+            </div>
+
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+
+
+  </section>
+</main>

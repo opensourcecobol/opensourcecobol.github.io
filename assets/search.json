@@ -1,0 +1,20 @@
+---
+---
+
+[
+  {% for post in site.posts %}
+    {% if post.searchable != false %}
+    {
+      "title"    : "{{ post.title | escape }}",
+      "summary"  : {{ post.content | strip_html | truncatewords: 50 | jsonify }},
+      "url"      : "{{site.url}}{{ site.baseurl }}{{ post.url }}",
+      "category" : "{{ post.categories | join: ', ' }}",
+      "tags"     : "{{ post.tags | join: ', ' }}",
+      "keywords" : "{{ post.search_keywords }}",
+      "date"     : "{{ post.date }}",
+      "date_day" : "{{ post.date | date: "%d" }}",
+      "date_my"  : "{{ post.date | date: "%b/%Y" }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endif %}
+  {% endfor %}
+]

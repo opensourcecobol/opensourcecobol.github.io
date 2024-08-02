@@ -1,0 +1,318 @@
+@mixin links($color) {
+	text-align: center;
+	text-decoration: none;
+	padding: 0 0.2em;
+	color: $color;
+
+	&:visited {color: $color;}
+	&:hover {color: $color; font-weight: bold;}
+	&:active {color: $color;}
+}
+
+
+
+@mixin default_card($font-color) {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    border-radius: 2px;
+    box-shadow: 0 0 6px $mid;
+    background-color: $lighter;
+    color: $font-color;
+}
+
+
+
+@mixin default_header($padding-left) {
+    font-size: 1.12em;
+    letter-spacing: 5px;
+    border-bottom: 1px dotted $mid;
+    margin-top: 2em;
+    padding-bottom: 0.5em;
+    padding-left: $padding-left
+}
+
+
+@mixin page_title() {
+    text-shadow: 0px 2px 4px rgba(100,100,100,0.5);
+    color: $primary-color;
+    font-family: Inter;
+    font-size: 3em;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 0;
+}
+
+
+@mixin hover() {
+    background-color: $primary-color;
+    color: $accent-color;
+}
+
+@mixin findresults() {
+    display: flex;
+    margin-bottom: 2em;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    h3 {
+        color: $primary-color;
+        padding: 0;
+        margin: 0;
+    }
+
+    h3 a {
+        color: $primary-color;
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    @media screen and (max-width: $large) {
+        font-size: 1em;
+        flex-wrap: wrap;
+    }
+
+
+}
+
+@mixin findresults_day() {
+    display: inline-block;
+    background: $primary-color;
+    color: $background-color;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    text-align: center;
+    font-style: unset;
+    line-height: 2em;
+}
+
+@mixin findresults_date() {
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // gap: -5px;
+    min-width: 6em;
+
+    @media screen and (max-width: $large) {
+        border: 1px solid black;
+        background-color: $secondary-color;
+        border-radius: 500px;
+        padding: 1em;
+    }
+
+}
+
+@mixin findresults_summary() {
+    margin-left: 2em;
+    color: $secondary-color;
+
+    a:hover {
+        @include hover();
+    }
+
+    @media screen and (max-width: $large) {
+        margin-top: 1em;
+        padding-bottom: 3em;
+        border-bottom: 1px dotted $primary-color;
+    }
+}
+
+@mixin showlinks($rows: 4) {
+    &::after {
+        content: "";
+        display: block;
+        border-top: 1px solid $secondary-color;
+        width: 98vw;
+        height: 0px;
+        margin: 4em 0;
+        position: relative;
+        left: -20%;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 1rem;
+
+        // Each item takes half of the container width minus the gap
+        @if $rows == 1 {
+            column-gap: 5rem;
+            li {
+                width: calc(100% - 5rem);
+            }
+        } @else if $rows == 2 {
+            column-gap: 5rem;
+            li {
+                width: calc(50% - 5rem);
+            }
+        } @else if $rows == 3 {
+            column-gap: 3rem;
+            li {
+                width: calc(33.33% - 3rem);
+            }
+        } @else if $rows == 4 {
+            column-gap: 2.5rem;
+            li {
+                width: calc(25% - 2.5rem);
+            }
+        } @else if $rows == 5 {
+            column-gap: 2rem;
+            li {
+                width: calc(20% - 2rem);
+            }
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px dotted $secondary-color;
+            cursor: pointer;
+
+            a {
+                text-decoration: none;
+                color: $primary-color;
+                font-weight: bold;
+                text-transform: lowercase;
+                letter-spacing: -1px;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                padding: 0.5em;
+
+                &:hover {
+                    @include hover();
+                }
+            }
+
+            .archive_linktitle {
+                flex: 1;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        ul {
+            column-gap: 0;
+
+            li {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+@mixin footer_elements($rows: 5) {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 0;
+        column-gap: 0;
+
+        // Each item takes half of the container width minus the gap
+        @if $rows == 1 {
+            li {
+                width: calc(100% - 1rem);
+            }
+        } @else if $rows == 2 {
+            li {
+                width: calc(50% - 1rem);
+            }
+        } @else if $rows == 3 {
+            li {
+                width: calc(33.33% - 1rem);
+            }
+        } @else if $rows == 4 {
+            li {
+                width: calc(25% - 1rem);
+            }
+        } @else if $rows == 5 {
+            li {
+                width: calc(20% - 1rem);
+            }
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: left;
+            cursor: pointer;
+            overflow-wrap: break-word;
+
+            a {
+                text-decoration: none;
+                color: $background-color;
+                text-transform: lowercase;
+                letter-spacing: -1px;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                padding: 0.5em;
+                text-align: left;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+
+                &:hover {
+                    @include hover();
+                }
+            }
+
+            .archive_linktitle {
+                flex: 1;
+            }
+        }
+    }
+}
+
+@mixin footer_elements_auto() {
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 0;
+        column-gap: 0;
+        width: fit-content;
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: left;
+            cursor: pointer;
+            overflow-wrap: break-word;
+            a {
+                text-decoration: none;
+                color: $background-color;
+                text-transform: lowercase;
+                letter-spacing: -1px;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                padding: 0.5em;
+                text-align: left;
+
+                &:hover {
+                    @include hover();
+                }
+            }
+
+            .archive_linktitle {
+                flex: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+<main id="home">
+	<section>
+		{% for post in paginator.posts %}
+			<article class="single_article">
+				<a href="{{ site.baseurl }}{{ post.url }}"><h3>{{ post.title }}</h3></a>
+				<p class="supplements">
+					<span>
+						<i class="fa fa-calendar"></i> {{ post.date | date: "%B %d, %Y" }}
+					</span>
+					<span class="supplements-sep"></span>
+					<span class="reading-time" title="Estimated read time">
+						{% include read_time.html %}
+					</span>
+					{% if post.categories != nil and post.categories.size > 0 %}
+						<span class="supplements-sep"></span>
+						<span class="supplements-category">
+							<i class="fa fa-bars"></i>
+							{% for category in post.categories %}
+								<a href="{{ site.baseurl }}/categories#{{ category | slugify }}">{{ category }}</a>{% if forloop.last == false %},{% endif %}
+							{% endfor %}
+						</span>
+					{% endif %}
+					{% if post.tags != nil and post.tags.size > 0 %}
+						<span class="supplements-sep"></span>
+						<span>
+							<i class="fa fa-tags"></i>
+							{% for tag in post.tags %}
+								<a href="{{ site.baseurl }}/tags#{{ tag | slugify }}">{{ tag }}</a>{% if forloop.last == false %},{% endif %}
+							{% endfor %}
+						</span>
+					{% endif %}
+
+					
+				</p>
+				<p class="summary">
+					{% comment %}{{ post.excerpt }}{% endcomment %}
+					{{ post.content | markdownify | strip_html | truncatewords: 50 }}
+				</p>
+				
+			</article>
+			<hr class="article-divider">
+		{% endfor %}
+
+		<!-- Pagination links -->
+		<div class="pagination">
+			{% if paginator.previous_page %}
+				<a class="previous" href="{{ site.baseurl}}{{ paginator.previous_page_path }}"><span class="spanprevious"><i class="fa fa-arrow-left" title="previous page"></i></span></a>
+			{% endif %}
+				<p class="page_count">{{ paginator.page }} / {{ paginator.total_pages }}</p>
+			{% if paginator.next_page %}
+				<a class="next" href="{{ site.baseurl}}{{ paginator.next_page_path }}"><span class="spannext"><i class="fa fa-arrow-right" title="next page"></i></span></a>
+			{% endif %}
+		</div>
+	</section>
+</main>

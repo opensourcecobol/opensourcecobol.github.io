@@ -1,0 +1,66 @@
+#search {
+    width: 100%;
+
+    .input {
+        text-align: center;
+    }
+}
+
+#search h1 {
+    @include page_title();
+}
+
+
+#search-container {
+    margin: auto;
+    text-align: center;
+}
+
+.search-results {
+    text-align: left;
+}
+
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* results Style */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+
+
+.search_findresults {
+    @include findresults();
+}
+
+.search_date {
+    @include findresults_date();
+}
+
+.search_day {
+    @include findresults_day();
+}
+
+.search_summary {
+    @include findresults_summary();
+}
+
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* search Button */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+
+
+#search-input {
+    border: 6px solid $accent-color;
+    border-radius: 2em;
+    padding: 0.5em 2em;
+    background-color: $background-color;
+    margin-bottom: 4em;
+    box-shadow: 10px 10px $primary-color;
+}
+
+#search-input:focus {
+    outline: none
+}

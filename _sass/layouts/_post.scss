@@ -1,0 +1,424 @@
+#post {
+	width: 100%;
+	font-size: 1.2em;
+}
+
+
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* grid */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(12,minmax(0,1fr));
+}
+
+
+.post_header {
+	grid-column: span 12/span 12;
+}
+
+.post_content {
+	grid-column: span 10/span 10;
+}
+
+#toc2 {
+	grid-column: span 2/span 2;
+}
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* content layout */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+
+.post_content {
+	position: relative;
+	margin-bottom: 4em; // for the to the top button
+
+	// header
+
+	h1 {
+		font-size: 1.5em;
+		font-style: italic;
+		letter-spacing: 5px;
+		border-left: 5px solid $primary-color;
+		padding: 0.5em;
+		margin-top: 3em;
+		background-color: $background-color;
+		margin-left: calc(-1em + 5px);; // 14px*2 padding - 5px border
+		overflow-wrap: break-word;
+	}
+
+	h1:first-child{
+		margin-top: 0;
+	}
+
+	h2 {
+		@include default_header(0);
+		border-bottom: 1px solid $primary-color;
+		font-size: 1.25em;
+		margin-top: 2.5em;
+	}
+
+
+	h3 {
+		@include default_header(0);
+	}
+
+	h4 {
+		@include default_header(2em);
+	}
+	
+	h5 {
+		@include default_header(4em);
+	}
+
+	h6 {
+		@include default_header(6em);
+	}
+
+	// to top Button...
+	#toTopButton {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		padding: 16px;
+
+		i {
+			color: $primary-color;
+			font-size: 1.8em;
+		}
+	}
+
+	// blockquotes
+
+	blockquote {
+		background: $background-color;
+		border-left: 10px solid #ccc;
+		margin: 1.5em 1em;
+		padding: 0.5em 10px;
+		quotes: "\201C""\201D""\2018""\2019";
+		font-style: italic;
+	}
+
+	blockquote::before {
+		color: #ccc;
+		content: open-quote;
+		font-size: 4em;
+		line-height: 0.1em;
+		margin-right: 0.25em;
+		vertical-align: -0.4em;
+	}
+
+	blockquote p {
+		display: inline;
+	}
+
+	// Tables
+	table {
+	  border-collapse: collapse;
+	  width: 100%;
+	  margin-bottom: 2em;
+	}
+
+	td, th {
+	  border: 1px solid $primary-color;
+	  padding: 8px;
+	}
+
+	tr:nth-child(even){background-color: rgba(0, 0, 0, 10%);}
+
+	tr:hover {background-color: $accent-color;}
+
+	th {
+	  padding-top: 12px;
+	  padding-bottom: 12px;
+	  background-color: $primary-color;
+	  color: white;
+	  text-align: center;
+	}
+
+
+	// code blocks default styles (includes "external/_highlighter_rougify_base16dark.scss")
+
+	.highlight {
+		pre {
+			padding: 1em;
+			color: $background-color;
+			overflow: auto;
+		}
+
+		pre * {
+			font-family: monospace;
+			font-size: 1em;
+		}
+
+		table {
+			margin: 0;
+		}
+		tr:hover {
+			background-color: #151515; //depends on external/_highlighter_rougify_base16dark.scss
+		}
+
+		td, th {
+			  border: 0;
+			  padding: 0;
+			}
+	}
+
+	// Inline Code Block
+	code.highlighter-rouge {
+		font-style: italic;
+		color: $primary-color;
+		background-color: rgba(0, 0, 0, 33%);
+		padding: 0 5px;
+	}
+}
+
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* TOC */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+
+article {
+	position: relative;
+}
+
+#tocContainer {
+	display: none;
+}
+
+
+/* Style your toggle button */
+#tocMenuButtonLabel {
+	cursor: pointer;
+}
+
+#tocMenuButton {
+	display: none;
+}
+
+#tocMenuButtonLabel {
+	font-size: 2em;
+	color: $primary-color;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	padding: 1rem;
+	z-index: 1;
+}
+
+#tocMenuButton:checked ~ #tocContainer {
+	display: block;
+	border: 1px solid $primary-color;
+	position: fixed;
+	top: 4vw;
+	right: 4vw;
+	min-width: 10vw;
+	max-width: 40vw;
+	background-color: $background-color;
+	z-index: 2;
+	overflow-x: hidden;
+	min-height: 10vh;
+	max-height: 80vh;
+
+	h1 {
+		text-shadow: 0px 0.1em 0.2em rgba(100, 100, 100, 0.5);
+		color: $primary-color;
+		font-size: 2em;
+		font-weight: bold;
+		letter-spacing: 1rem;
+		text-align: center;
+	}
+
+	ul {
+		list-style: none;
+		padding-inline-start: 0;
+		ul {
+				padding-left: 1em;
+		}
+	}
+
+	li a {
+		border-bottom: 1px dashed $secondary-color;
+		opacity: 0.8;
+		width: 80%;
+		display: block;
+		margin: 1rem auto;
+	}
+
+	a {
+		text-decoration: none;
+		color: $secondary-color;
+		font-size: 1em;
+		line-height: 1.5;
+	}
+
+	a:hover {
+		@include hover();
+	}
+}
+
+
+@media screen and (max-width: $large) {
+  #tocMenuButtonLabel {
+    font-size: 1.5em;
+    padding: 0.5rem;
+  }
+
+  #tocMenuButton:checked ~ #tocContainer {
+    max-width: 80vw;
+    height: 80vh;
+    top: 10vw;
+    left: 10vw;
+    font-size: 1.5em;
+
+    h1 {
+      font-size: 1.5em;
+      letter-spacing: 0.5rem;
+    }
+
+    ul {
+      margin: 0;
+    }
+
+    li a {
+      margin: 0.5rem auto;
+    }
+  }
+}
+
+
+#toc2 {
+	font-size: 0.75em;
+	position: sticky;
+	top: 2vw;
+	z-index: 1;
+	transform: translate(2.5em);
+	color: $secondary-color;
+	align-self: start;
+	letter-spacing: -1px;
+
+	ul {
+		padding: 0;
+	}
+
+	ul ul {
+		padding-left: 0.8em;
+	}
+
+
+
+	li::marker {
+		content: ' >   ';
+		font-size: 0.8em;
+		font-weight: bold;
+		font-family: "Georgia";
+		vertical-align: middle;
+	  position: relative;
+	  top: -3px;
+	}
+
+	li a {
+		text-decoration: none;
+		color: $primary-color;
+		line-height: 1.5em;
+	}
+
+	li a:hover {
+		@include hover();
+		//font-size: 1.2em;
+	}
+}
+
+@media screen and (max-width: $xlarge) {
+	#toc2 {
+		font-size: 0.5em;
+	}
+}
+
+@media screen and (max-width: $large) {
+	#toc2 {
+		display: none;
+	}
+}
+
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* header layout */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+
+
+.post_header::after {
+    content: "";
+    display: block;
+    border-top: 1px solid $secondary-color;
+    width: 98vw;
+    height: 0px;
+    margin: 4em 0;
+    position: relative;
+    left: -20%;
+}
+
+#post article {
+
+	.post_header {
+		position: relative;
+
+		a {
+			@include links($primary-color);
+			text-align: left;
+			padding: 0;
+		}
+
+		i {
+			color: $primary-color;
+		}
+
+		h1 {
+			color: $primary-color;
+			font-weight: bold;
+			font-family: Inter;
+			font-size: 2.5em;
+			letter-spacing: 2px;
+			margin-bottom: 0;
+		}
+
+		h3 {
+			color: $primary-color;
+			font-weight: normal;
+			margin-top: 0.5em;
+		}
+
+		.supplements {
+			color: $primary-color;
+			margin-top: 3em;
+		}
+
+		.supplements a {
+			word-break: break-all;
+			&:hover {
+				@include hover();
+			}
+		  }
+
+		.supplements-sep::before {
+		    content: "\2022";
+		    padding-left: 0.5em;
+		    padding-right: 0.5em;
+		}
+	}
+
+	.post_header_content_parting_line {
+		margin: 2em 0;
+	}
+}
