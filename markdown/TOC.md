@@ -231,4 +231,4 @@
    - [9.1. FileStat-Msgs.cpy – ファイル状態コード](9-1.md#91-filestat-msgscpy--ファイル状態コード)  
    - [9.2. COBDUMP –16 進数/文字データダンプサブルーチン](9-2.md)  
 
-[クレジットページ](credit.md)
+[クレジット](credit.md)
