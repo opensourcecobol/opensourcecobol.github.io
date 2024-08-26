@@ -18,8 +18,18 @@
   <body>
     <div class="container-lg px-3 my-5 markdown-body">
 
+        {% if site.title and site.title != page.title %}
+        <h1><a href="test1">{{ test2 }}</a></h1>
+        {% endif %}
+
 
       {{ content }}
+
+      {% if site.github.private != true and site.github.license %}
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        Copyright © ○○○○ All Rights Reserved.
+      </div>
+      {% endif %}
 
 
     </div>
