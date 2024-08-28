@@ -1,6 +1,7 @@
 <!--navi start-->
 [前へ](9-2.md)/次へ
 <!--navi end-->
+<br>
 opensource COBOL Programmer's Guide
 
 【制作】<br>
