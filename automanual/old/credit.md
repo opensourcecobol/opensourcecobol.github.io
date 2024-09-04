@@ -29,5 +29,3 @@ OVOL ICTソリューションズ株式会社<br>
 【発行】<br>
 OSSコンソーシアム オープンCOBOLソリューション部会<br>
 URL: [https://www.osscons.jp/osscobol/](https://www.osscons.jp/osscobol/)
-
-[ページトップへ](credit.md)

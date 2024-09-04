@@ -273,7 +273,7 @@ public class AUTOMANUAL implements CobolRunnable {
               CobolControl.perform(contList, l_Default_Error_Handler).run();
             }
         }
-        /* AUTOMANUAL.cbl:78: WRITE */
+        /* AUTOMANUAL.cbl:79: WRITE */
         CobolRuntimeException.code = 0;
         {
           f_NEW_REC.moveFrom (c_4);
@@ -284,15 +284,15 @@ public class AUTOMANUAL implements CobolRunnable {
             /* PERFORM Default Error Handler */
             CobolControl.perform(contList, l_Default_Error_Handler).run();
           }
-        /* AUTOMANUAL.cbl:82: MOVE */
+        /* AUTOMANUAL.cbl:83: MOVE */
         {
           b_NEW_REC.fillBytes (32, 50000);
         }
-        /* AUTOMANUAL.cbl:83: IF */
+        /* AUTOMANUAL.cbl:84: IF */
         {
           if ((((long)f_MD_PREVIOUS.compareTo (CobolConstant.space) != 0L) && ((long)f_MD_NEXT.compareTo (CobolConstant.space) != 0L)))
             {
-              /* AUTOMANUAL.cbl:84: STRING */
+              /* AUTOMANUAL.cbl:85: STRING */
               {
                 CobolString.stringInit (f_NEW_REC, 0);
                 CobolString.stringDelimited (0);
@@ -310,45 +310,22 @@ public class AUTOMANUAL implements CobolRunnable {
                 CobolString.stringDelimited (0);
                 CobolString.stringAppend (c_7);
                 CobolString.stringDelimited (CobolConstant.space);
-                CobolString.stringAppend (f_MD_NEXT);
+                CobolString.stringAppend (c_10_https);
+                CobolString.stringDelimited (CobolConstant.space);
+                CobolString.stringAppend (c_11_github);
                 CobolString.stringDelimited (0);
-                CobolString.stringAppend (c_10);
-                CobolString.stringFinish ();
-              }
-              /* AUTOMANUAL.cbl:94: WRITE */
-              CobolRuntimeException.code = 0;
-              {
-                h_NEWFILE.write (f_NEW_REC, 2162689, f_NEW_STS);
-              }
-              if (CobolRuntimeException.code != 0)
-                {
-                  /* PERFORM Default Error Handler */
-                  CobolControl.perform(contList, l_Default_Error_Handler).run();
-                }
-            }
-        }
-        /* AUTOMANUAL.cbl:95: IF */
-        {
-          if (((long)f_MD_PREVIOUS.compareTo (CobolConstant.space) == 0L))
-            {
-              /* AUTOMANUAL.cbl:96: STRING */
-              {
-                CobolString.stringInit (f_NEW_REC, 0);
+                CobolString.stringAppend (c_8);
                 CobolString.stringDelimited (0);
-                CobolString.stringAppend (c_6);
-                CobolString.stringDelimited (0);
-                CobolString.stringAppend (c_11);
-                CobolString.stringDelimited (0);
-                CobolString.stringAppend (c_9);
+                CobolString.stringAppend (c_12);
                 CobolString.stringDelimited (0);
                 CobolString.stringAppend (c_7);
                 CobolString.stringDelimited (CobolConstant.space);
                 CobolString.stringAppend (f_MD_NEXT);
                 CobolString.stringDelimited (0);
-                CobolString.stringAppend (c_10);
+                CobolString.stringAppend (c_13);
                 CobolString.stringFinish ();
               }
-              /* AUTOMANUAL.cbl:103: WRITE */
+              /* AUTOMANUAL.cbl:102: WRITE */
               CobolRuntimeException.code = 0;
               {
                 h_NEWFILE.write (f_NEW_REC, 2162689, f_NEW_STS);
@@ -360,11 +337,54 @@ public class AUTOMANUAL implements CobolRunnable {
                 }
             }
         }
-        /* AUTOMANUAL.cbl:104: IF */
+        /* AUTOMANUAL.cbl:103: IF */
+        {
+          if (((long)f_MD_PREVIOUS.compareTo (CobolConstant.space) == 0L))
+            {
+              /* AUTOMANUAL.cbl:104: STRING */
+              {
+                CobolString.stringInit (f_NEW_REC, 0);
+                CobolString.stringDelimited (0);
+                CobolString.stringAppend (c_6);
+                CobolString.stringDelimited (0);
+                CobolString.stringAppend (c_14);
+                CobolString.stringDelimited (0);
+                CobolString.stringAppend (c_9);
+                CobolString.stringDelimited (0);
+                CobolString.stringAppend (c_7);
+                CobolString.stringDelimited (CobolConstant.space);
+                CobolString.stringAppend (c_10_https);
+                CobolString.stringDelimited (CobolConstant.space);
+                CobolString.stringAppend (c_11_github);
+                CobolString.stringDelimited (0);
+                CobolString.stringAppend (c_8);
+                CobolString.stringDelimited (0);
+                CobolString.stringAppend (c_12);
+                CobolString.stringDelimited (0);
+                CobolString.stringAppend (c_7);
+                CobolString.stringDelimited (CobolConstant.space);
+                CobolString.stringAppend (f_MD_NEXT);
+                CobolString.stringDelimited (0);
+                CobolString.stringAppend (c_13);
+                CobolString.stringFinish ();
+              }
+              /* AUTOMANUAL.cbl:118: WRITE */
+              CobolRuntimeException.code = 0;
+              {
+                h_NEWFILE.write (f_NEW_REC, 2162689, f_NEW_STS);
+              }
+              if (CobolRuntimeException.code != 0)
+                {
+                  /* PERFORM Default Error Handler */
+                  CobolControl.perform(contList, l_Default_Error_Handler).run();
+                }
+            }
+        }
+        /* AUTOMANUAL.cbl:119: IF */
         {
           if (((long)f_MD_NEXT.compareTo (CobolConstant.space) == 0L))
             {
-              /* AUTOMANUAL.cbl:105: STRING */
+              /* AUTOMANUAL.cbl:120: STRING */
               {
                 CobolString.stringInit (f_NEW_REC, 0);
                 CobolString.stringDelimited (0);
@@ -376,12 +396,22 @@ public class AUTOMANUAL implements CobolRunnable {
                 CobolString.stringDelimited (CobolConstant.space);
                 CobolString.stringAppend (f_MD_PREVIOUS);
                 CobolString.stringDelimited (0);
-                CobolString.stringAppend (c_12);
+                CobolString.stringAppend (c_8);
                 CobolString.stringDelimited (0);
                 CobolString.stringAppend (c_9);
+                CobolString.stringDelimited (0);
+                CobolString.stringAppend (c_7);
+                CobolString.stringDelimited (CobolConstant.space);
+                CobolString.stringAppend (c_10_https);
+                CobolString.stringDelimited (CobolConstant.space);
+                CobolString.stringAppend (c_11_github);
+                CobolString.stringDelimited (0);
+                CobolString.stringAppend (c_15);
+                CobolString.stringDelimited (0);
+                CobolString.stringAppend (c_12);
                 CobolString.stringFinish ();
               }
-              /* AUTOMANUAL.cbl:112: WRITE */
+              /* AUTOMANUAL.cbl:134: WRITE */
               CobolRuntimeException.code = 0;
               {
                 h_NEWFILE.write (f_NEW_REC, 2162689, f_NEW_STS);
@@ -393,10 +423,10 @@ public class AUTOMANUAL implements CobolRunnable {
                 }
             }
         }
-        /* AUTOMANUAL.cbl:115: WRITE */
+        /* AUTOMANUAL.cbl:137: WRITE */
         CobolRuntimeException.code = 0;
         {
-          f_NEW_REC.moveFrom (c_13);
+          f_NEW_REC.moveFrom (c_16);
           h_NEWFILE.write (f_NEW_REC, 2162689, f_NEW_STS);
         }
         if (CobolRuntimeException.code != 0)
@@ -404,17 +434,17 @@ public class AUTOMANUAL implements CobolRunnable {
             /* PERFORM Default Error Handler */
             CobolControl.perform(contList, l_Default_Error_Handler).run();
           }
-        /* AUTOMANUAL.cbl:116: PERFORM */
+        /* AUTOMANUAL.cbl:138: PERFORM */
         for (;;)
           {
             if (((long)f_OLD_STS.compareTo (CobolConstant.zero) != 0L))
               break;
             {
-              /* AUTOMANUAL.cbl:117: MOVE */
+              /* AUTOMANUAL.cbl:139: MOVE */
               {
                 b_OLD_REC.fillBytes (32, 50000);
               }
-              /* AUTOMANUAL.cbl:118: READ */
+              /* AUTOMANUAL.cbl:140: READ */
               CobolRuntimeException.code = 0;
               {
                 h_OLDFILE.read (0, f_OLD_STS, 1);
@@ -424,7 +454,7 @@ public class AUTOMANUAL implements CobolRunnable {
                   if (CobolRuntimeException.code == 0x0501)
                     {
                       {
-                        /* AUTOMANUAL.cbl:120: CONTINUE */
+                        /* AUTOMANUAL.cbl:142: CONTINUE */
                         {
                           ;
                         }
@@ -439,11 +469,11 @@ public class AUTOMANUAL implements CobolRunnable {
               else
                 {
                   {
-                    /* AUTOMANUAL.cbl:122: MOVE */
+                    /* AUTOMANUAL.cbl:144: MOVE */
                     {
                       b_NEW_REC.setBytes (b_OLD_REC, 50000);
                     }
-                    /* AUTOMANUAL.cbl:123: WRITE */
+                    /* AUTOMANUAL.cbl:145: WRITE */
                     CobolRuntimeException.code = 0;
                     {
                       h_NEWFILE.write (f_NEW_REC, 2162689, f_NEW_STS);
@@ -457,7 +487,36 @@ public class AUTOMANUAL implements CobolRunnable {
                 }
             }
           }
-        /* AUTOMANUAL.cbl:126: CLOSE */
+        /* AUTOMANUAL.cbl:149: MOVE */
+        {
+          b_NEW_REC.fillBytes (32, 50000);
+        }
+        /* AUTOMANUAL.cbl:150: STRING */
+        {
+          CobolString.stringInit (f_NEW_REC, 0);
+          CobolString.stringDelimited (0);
+          CobolString.stringAppend (c_5);
+          CobolString.stringDelimited (0);
+          CobolString.stringAppend (c_17);
+          CobolString.stringDelimited (0);
+          CobolString.stringAppend (c_7);
+          CobolString.stringDelimited (CobolConstant.space);
+          CobolString.stringAppend (f_MD_CURRENT);
+          CobolString.stringDelimited (0);
+          CobolString.stringAppend (c_13);
+          CobolString.stringFinish ();
+        }
+        /* AUTOMANUAL.cbl:157: WRITE */
+        CobolRuntimeException.code = 0;
+        {
+          h_NEWFILE.write (f_NEW_REC, 2162689, f_NEW_STS);
+        }
+        if (CobolRuntimeException.code != 0)
+          {
+            /* PERFORM Default Error Handler */
+            CobolControl.perform(contList, l_Default_Error_Handler).run();
+          }
+        /* AUTOMANUAL.cbl:158: CLOSE */
         {
           CobolRuntimeException.code = 0;
           {
@@ -469,7 +528,7 @@ public class AUTOMANUAL implements CobolRunnable {
               CobolControl.perform(contList, l_Default_Error_Handler).run();
             }
         }
-        /* AUTOMANUAL.cbl:127: CLOSE */
+        /* AUTOMANUAL.cbl:159: CLOSE */
         {
           CobolRuntimeException.code = 0;
           {
@@ -488,7 +547,7 @@ public class AUTOMANUAL implements CobolRunnable {
     /* MAIN-900 */
     new CobolControl(l_MAIN_CONTROL__MAIN_900, CobolControl.LabelType.label) {
       public Optional<CobolControl> run() throws CobolRuntimeException, CobolGoBackException, CobolStopRunException {
-        /* AUTOMANUAL.cbl:129: STOP */
+        /* AUTOMANUAL.cbl:161: STOP */
         {
           CobolStopRunException.throwException (b_RETURN_CODE.intValue());
         }
@@ -589,10 +648,14 @@ public class AUTOMANUAL implements CobolRunnable {
       c_7	= CobolFieldFactory.makeCobolField(2, str_6, a_1);
       c_8	= CobolFieldFactory.makeCobolField(3, str_7, a_1);
       c_9	= CobolFieldFactory.makeCobolField(6, str_8, a_1);
-      c_10	= CobolFieldFactory.makeCobolField(1, str_9, a_1);
-      c_11	= CobolFieldFactory.makeCobolField(2, str_10, a_1);
-      c_12	= CobolFieldFactory.makeCobolField(2, str_11, a_1);
-      c_13	= CobolFieldFactory.makeCobolField(15, str_12, a_1);
+      c_10_https	= CobolFieldFactory.makeCobolField(43, str_9_https, a_1);
+      c_11_github	= CobolFieldFactory.makeCobolField(27, str_10_github, a_1);
+      c_12	= CobolFieldFactory.makeCobolField(6, str_11, a_1);
+      c_13	= CobolFieldFactory.makeCobolField(1, str_12, a_1);
+      c_14	= CobolFieldFactory.makeCobolField(2, str_13, a_1);
+      c_15	= CobolFieldFactory.makeCobolField(2, str_14, a_1);
+      c_16	= CobolFieldFactory.makeCobolField(15, str_15, a_1);
+      c_17	= CobolFieldFactory.makeCobolField(21, str_16, a_1);
 
     } catch(NullPointerException e) {
       System.out.println("Error - NullpointerException");
@@ -651,10 +714,14 @@ public class AUTOMANUAL implements CobolRunnable {
 
   /* Constants */
 
+  private AbstractCobolField c_17;
+  private AbstractCobolField c_16;
+  private AbstractCobolField c_15;
+  private AbstractCobolField c_14;
   private AbstractCobolField c_13;
   private AbstractCobolField c_12;
-  private AbstractCobolField c_11;
-  private AbstractCobolField c_10;
+  private AbstractCobolField c_11_github;
+  private AbstractCobolField c_10_https;
   private AbstractCobolField c_9;
   private AbstractCobolField c_8;
   private AbstractCobolField c_7;
@@ -672,11 +739,15 @@ public class AUTOMANUAL implements CobolRunnable {
 
 
   /* String literals */
-  public static final byte[] str_12 = CobolUtil.stringToBytes("<!--navi end-->");
-  public static final byte[] str_11 = CobolUtil.stringToBytes(")/");
-  public static final byte[] str_10 = CobolUtil.stringToBytes("/[");
-  public static final byte[] str_9 = CobolUtil.stringToBytes(")");
-  public static final byte[] str_8 = CobolUtil.toBytes((byte)0xe6, (byte)0xac, (byte)0xa1, (byte)0xe3, (byte)0x81, (byte)0xb8);
+  public static final byte[] str_16 = CobolUtil.toBytes((byte)0xe3, (byte)0x83, (byte)0x9a, (byte)0xe3, (byte)0x83, (byte)0xbc, (byte)0xe3, (byte)0x82, (byte)0xb8, (byte)0xe3, (byte)0x83, (byte)0x88, (byte)0xe3, (byte)0x83, (byte)0x83, (byte)0xe3, (byte)0x83, (byte)0x97, (byte)0xe3, (byte)0x81, (byte)0xb8);
+  public static final byte[] str_15 = CobolUtil.stringToBytes("<!--navi end-->");
+  public static final byte[] str_14 = CobolUtil.stringToBytes(")/");
+  public static final byte[] str_13 = CobolUtil.stringToBytes("/[");
+  public static final byte[] str_12 = CobolUtil.stringToBytes(")");
+  public static final byte[] str_11 = CobolUtil.toBytes((byte)0xe6, (byte)0xac, (byte)0xa1, (byte)0xe3, (byte)0x81, (byte)0xb8);
+  public static final byte[] str_10_github = CobolUtil.stringToBytes("github.io/markdown/TOC.html");
+  public static final byte[] str_9_https = CobolUtil.stringToBytes("https://momo2584.github.io/opensourcecobol.");
+  public static final byte[] str_8 = CobolUtil.toBytes((byte)0xe7, (byte)0x9b, (byte)0xae, (byte)0xe6, (byte)0xac, (byte)0xa1);
   public static final byte[] str_7 = CobolUtil.stringToBytes(")/[");
   public static final byte[] str_6 = CobolUtil.stringToBytes("](");
   public static final byte[] str_5 = CobolUtil.toBytes((byte)0xe5, (byte)0x89, (byte)0x8d, (byte)0xe3, (byte)0x81, (byte)0xb8);

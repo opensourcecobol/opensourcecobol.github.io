@@ -1,7 +1,7 @@
        IDENTIFICATION              DIVISION.
-       PROGRAM-ID.                 AUTOMANUAL_1.
-       AUTHOR.                     M YOKOGAWA.
-       DATE-WRITTEN.               2024-09-04.
+       PROGRAM-ID.                 AUTOMANUAL_horyu.
+       AUTHOR.                     M SHIMADA.
+       DATE-WRITTEN.               2024-07-26.
       ******************************************************************
        ENVIRONMENT                 DIVISION.
       ******************************************************************
@@ -39,9 +39,6 @@
        01  MD-PREVIOUS             PIC X(250).
        01  MD-NEXT                 PIC X(250).
        01  END-FLG                 PIC 9(01).
-       01 LINE-CHECK               PIC X(50000).
-       01 LINE-COUNTER-            PIC 9(03) VALUE 0.
-       01 SKIP-LINES               PIC 9(03) VALUE 3.  *> スキップする行数
       ******************************************************************
        PROCEDURE                   DIVISION.
       ******************************************************************
@@ -76,20 +73,6 @@
 
            OPEN  INPUT OLDFILE
                  OUTPUT NEWFILE.
-           
-           PERFORM UNTIL OLD-STS NOT = '00'
-               READ OLD-FILE INTO LINE-CHECK
-                   AT END
-                       MOVE '99' TO OLD-STS
-               NOT AT END
-                   ADD 1 TO LINE-COUNTER-
-                   IF LINE-COUNTER- > SKIP-LINES
-                       MOVE LINE-CHECK TO NEW-REC
-                       WRITE NEW-REC
-                   END-IF
-               END-READ
-           END-PERFORM
-
       *1行目
       *<!--navi start-->を挿入する
            WRITE NEW-REC FROM "<!--navi start-->".
@@ -103,13 +86,6 @@
                       "]("            DELIMITED BY SIZE
                       MD-PREVIOUS     DELIMITED BY SPACE
                       ")/["           DELIMITED BY SIZE
-                      X"E79BAEE6ACA1" DELIMITED BY SIZE
-                      "]("            DELIMITED BY SIZE
-                      "https://momo2584.github.io/opensourcecobol."
-                                      DELIMITED BY SPACE
-                      "github.io/markdown/TOC.html" 
-                                      DELIMITED BY SPACE
-                      ")/["           DELIMITED BY SIZE
                       X"E6ACA1E381B8" DELIMITED BY SIZE
                       "]("            DELIMITED BY SIZE
                       MD-NEXT         DELIMITED BY SPACE
@@ -119,13 +95,6 @@
            IF MD-PREVIOUS = SPACE
               STRING  X"E5898DE381B8" DELIMITED BY SIZE
                       "/["            DELIMITED BY SIZE
-                      X"E79BAEE6ACA1" DELIMITED BY SIZE
-                      "]("            DELIMITED BY SIZE
-                      "https://momo2584.github.io/opensourcecobol."
-                                      DELIMITED BY SPACE
-                      "github.io/markdown/TOC.html" 
-                                      DELIMITED BY SPACE
-                      ")/["           DELIMITED BY SIZE
                       X"E6ACA1E381B8" DELIMITED BY SIZE
                       "]("            DELIMITED BY SIZE
                       MD-NEXT         DELIMITED BY SPACE
@@ -137,13 +106,6 @@
                       X"E5898DE381B8" DELIMITED BY SIZE
                       "]("            DELIMITED BY SIZE
                       MD-PREVIOUS     DELIMITED BY SPACE
-                      ")/["           DELIMITED BY SIZE
-                      X"E79BAEE6ACA1" DELIMITED BY SIZE
-                      "]("            DELIMITED BY SIZE
-                      "https://momo2584.github.io/opensourcecobol."
-                                      DELIMITED BY SPACE
-                      "github.io/markdown/TOC.html" 
-                                      DELIMITED BY SPACE
                       ")/"            DELIMITED BY SIZE
                       X"E6ACA1E381B8" DELIMITED BY SIZE
                       INTO NEW-REC
@@ -155,13 +117,6 @@
              MOVE SPACE TO OLD-REC
              READ OLDFILE NEXT
                AT END
-      *「ページトップへ」を挿入する
-              STRING  "["            DELIMITED BY SIZE
-                      X"E3839AE383BCE382B8E38388E38383E38397E381B8" 
-                                      DELIMITED BY SIZE
-                      "]("            DELIMITED BY SIZE
-                      MD-CURRENT      DELIMITED BY SPACE
-                      ")"             DELIMITED BY SIZE
                   CONTINUE
                NOT AT END
                   MOVE OLD-REC TO NEW-REC

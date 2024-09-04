@@ -454,7 +454,7 @@ public class AUTOMANUAL_TOC implements CobolRunnable {
                   if (CobolRuntimeException.code == 0x0501)
                     {
                       {
-                        /* AUTOMANUAL_TOC.cbl:141: CONTINUE */
+                        /* AUTOMANUAL_TOC.cbl:142: CONTINUE */
                         {
                           ;
                         }
@@ -469,11 +469,11 @@ public class AUTOMANUAL_TOC implements CobolRunnable {
               else
                 {
                   {
-                    /* AUTOMANUAL_TOC.cbl:143: MOVE */
+                    /* AUTOMANUAL_TOC.cbl:144: MOVE */
                     {
                       b_NEW_REC.setBytes (b_OLD_REC, 50000);
                     }
-                    /* AUTOMANUAL_TOC.cbl:144: WRITE */
+                    /* AUTOMANUAL_TOC.cbl:145: WRITE */
                     CobolRuntimeException.code = 0;
                     {
                       h_NEWFILE.write (f_NEW_REC, 2162689, f_NEW_STS);
@@ -487,7 +487,7 @@ public class AUTOMANUAL_TOC implements CobolRunnable {
                 }
             }
           }
-        /* AUTOMANUAL_TOC.cbl:147: CLOSE */
+        /* AUTOMANUAL_TOC.cbl:148: CLOSE */
         {
           CobolRuntimeException.code = 0;
           {
@@ -499,7 +499,7 @@ public class AUTOMANUAL_TOC implements CobolRunnable {
               CobolControl.perform(contList, l_Default_Error_Handler).run();
             }
         }
-        /* AUTOMANUAL_TOC.cbl:148: CLOSE */
+        /* AUTOMANUAL_TOC.cbl:149: CLOSE */
         {
           CobolRuntimeException.code = 0;
           {
@@ -518,7 +518,7 @@ public class AUTOMANUAL_TOC implements CobolRunnable {
     /* MAIN-900 */
     new CobolControl(l_MAIN_CONTROL__MAIN_900, CobolControl.LabelType.label) {
       public Optional<CobolControl> run() throws CobolRuntimeException, CobolGoBackException, CobolStopRunException {
-        /* AUTOMANUAL_TOC.cbl:150: STOP */
+        /* AUTOMANUAL_TOC.cbl:151: STOP */
         {
           CobolStopRunException.throwException (b_RETURN_CODE.intValue());
         }
