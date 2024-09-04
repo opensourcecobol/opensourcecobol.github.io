@@ -1,3 +1,7 @@
+<!--navi start-->
+[前へ](9-2.md)/次へ
+<!--navi end-->
+<br>
 opensource COBOL Programmer's Guide
 
 【制作】<br>
@@ -8,6 +12,9 @@ Gary Cutler ("OpenCOBOL 1.1 Programmer’s Guide")
 
 【翻訳・執筆】<br>
 東京システムハウス株式会社 島田桃花
+
+【マークダウン化】<br>
+東京システムハウス株式会社 馮婉怡、横川桃子、横山颯斗
 
 【監修】<br>
 東京システムハウス株式会社 比毛寛之、上野俊作、井坂徳恭<br>
@@ -21,4 +28,6 @@ OVOL ICTソリューションズ株式会社<br>
 
 【発行】<br>
 OSSコンソーシアム オープンCOBOLソリューション部会<br>
-URL: https://www.osscons.jp/osscobol/
+URL: [https://www.osscons.jp/osscobol/](https://www.osscons.jp/osscobol/)
+
+[ページトップへ](credit.md)

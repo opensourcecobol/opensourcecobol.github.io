@@ -88,8 +88,10 @@
                       ")/["           DELIMITED BY SIZE
                       X"E79BAEE6ACA1" DELIMITED BY SIZE
                       "]("            DELIMITED BY SIZE
-                      https://momo2584.github.io/opensourcecobol.github.
-      -               io/markdown/TOC.html     DELIMITED BY SPACE
+                      "https://momo2584.github.io/opensourcecobol."
+                                      DELIMITED BY SPACE
+                      "github.io/markdown/TOC.html" 
+                                      DELIMITED BY SPACE
                       ")/["           DELIMITED BY SIZE
                       X"E6ACA1E381B8" DELIMITED BY SIZE
                       "]("            DELIMITED BY SIZE
@@ -102,8 +104,10 @@
                       "/["            DELIMITED BY SIZE
                       X"E79BAEE6ACA1" DELIMITED BY SIZE
                       "]("            DELIMITED BY SIZE
-                      https://momo2584.github.io/opensourcecobol.github.
-      -               io/markdown/TOC.html     DELIMITED BY SPACE
+                      "https://momo2584.github.io/opensourcecobol."
+                                      DELIMITED BY SPACE
+                      "github.io/markdown/TOC.html" 
+                                      DELIMITED BY SPACE
                       ")/["           DELIMITED BY SIZE
                       X"E6ACA1E381B8" DELIMITED BY SIZE
                       "]("            DELIMITED BY SIZE
@@ -119,8 +123,10 @@
                       ")/["           DELIMITED BY SIZE
                       X"E79BAEE6ACA1" DELIMITED BY SIZE
                       "]("            DELIMITED BY SIZE
-                      https://momo2584.github.io/opensourcecobol.github.
-      -               io/markdown/TOC.html     DELIMITED BY SPACE
+                      "https://momo2584.github.io/opensourcecobol."
+                                      DELIMITED BY SPACE
+                      "github.io/markdown/TOC.html" 
+                                      DELIMITED BY SPACE
                       ")/"            DELIMITED BY SIZE
                       X"E6ACA1E381B8" DELIMITED BY SIZE
                       INTO NEW-REC
@@ -132,6 +138,7 @@
              MOVE SPACE TO OLD-REC
              READ OLDFILE NEXT
                AT END
+                  
                   CONTINUE
                NOT AT END
                   MOVE OLD-REC TO NEW-REC
