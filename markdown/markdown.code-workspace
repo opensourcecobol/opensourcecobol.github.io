@@ -9,7 +9,10 @@
 		"coboleditor.metadata_entrypoints": [],
 		"coboleditor.metadata_types": [],
 		"coboleditor.metadata_files": [
-			"1725433852879,automanual/AUTOMANUAL_1.cbl"
+			"1725587372404,automanual/AUTOMANUAL.cbl",
+			"1725864133407,automanual/AUTODELETE_2.cbl",
+			"1725584465517,automanual/AUTOMANUAL_original.cbl",
+			"1725864133407,automanual/AUTODELETE.cbl"
 		],
 		"coboleditor.metadata_knowncopybooks": []
 	}
