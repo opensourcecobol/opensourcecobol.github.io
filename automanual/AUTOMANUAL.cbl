@@ -62,21 +62,21 @@
       *変換前後のファイルをフォルダ分けするためディレクトリを追加する
            MOVE SPACE TO OLD-FILE-PATH.
            STRING   "old/"      DELIMITED BY SIZE
-                    MD-CURRENT DELIMITED BY SPACE
+                    MD-CURRENT  DELIMITED BY SPACE
                     INTO   OLD-FILE-PATH.
            MOVE SPACE TO NEW-FILE-PATH.
            STRING   "new/"      DELIMITED BY SIZE
-                    MD-CURRENT DELIMITED BY SPACE
+                    MD-CURRENT  DELIMITED BY SPACE
                     INTO   NEW-FILE-PATH.
 
            IF OLD-FILE-PATH = space GO TO MAIN-900.
 
-           OPEN  INPUT OLDFILE
+           OPEN  INPUT  OLDFILE
                  OUTPUT NEWFILE.
 
       *1行目
-      *<!--navi start-->を挿入する
-           WRITE NEW-REC FROM "<!--navi start-->".
+      *<!--navi start1-->を挿入する
+           WRITE NEW-REC FROM "<!--navi start1-->".
       *2行目
       *前へ/次へを挿入する※文字化け防止のため16進数で挿入
       *前後ファイルのリンクも挿入する
@@ -133,8 +133,8 @@
                       INTO NEW-REC
               WRITE NEW-REC.
       *3行目
-      *<!--navi end-->を挿入する
-           WRITE NEW-REC FROM "<!--navi end-->".
+      *<!--navi end1-->を挿入する
+           WRITE NEW-REC FROM "<!--navi end1-->".
            PERFORM UNTIL (OLD-STS NOT = ZERO)
                MOVE SPACE TO OLD-REC
                READ OLDFILE NEXT
@@ -145,8 +145,15 @@
                     WRITE NEW-REC
                END-READ
            END-PERFORM.
-      *「ページトップへ」を挿入する
-           MOVE SPACE TO NEW-REC.
+
+      *最後から3行目
+      *<!--navi start2-->を挿入する
+           WRITE NEW-REC FROM "<!--navi start2-->".
+
+      *最後から2行目「ページトップへ」を挿入する
+           MOVE SPACE TO NEW-REC
+           WRITE NEW-REC
+           MOVE SPACE TO NEW-REC
            STRING  "["             DELIMITED BY SIZE
                    X"E3839AE383BCE382B8E38388E38383E38397E381B8" 
                                    DELIMITED BY SIZE
@@ -154,7 +161,21 @@
                    MD-CURRENT      DELIMITED BY SPACE
                    ")"             DELIMITED BY SIZE
                    INTO NEW-REC
-           WRITE NEW-REC.
+              WRITE NEW-REC.
+      *最終行
+      *<!--navi end2-->を挿入する
+           WRITE NEW-REC FROM "<!--navi end2-->".
+           PERFORM UNTIL (OLD-STS NOT = ZERO)
+               MOVE SPACE TO OLD-REC
+               READ OLDFILE NEXT
+                 AT END
+                    CONTINUE
+                 NOT AT END
+                    MOVE OLD-REC TO NEW-REC
+                    WRITE NEW-REC
+               END-READ
+           END-PERFORM.
+      *    WRITE NEW-REC.
            CLOSE NEWFILE.
            CLOSE OLDFILE.
        MAIN-900.
