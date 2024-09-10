@@ -233,5 +233,7 @@
 
 [クレジット](credit.md)
 
+<!--navi start2-->
 
 [ページトップへ](TOC.md)
+<!--navi end2-->
