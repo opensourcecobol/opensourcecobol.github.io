@@ -434,60 +434,7 @@ public class AUTOMANUAL implements CobolRunnable {
             /* PERFORM Default Error Handler */
             CobolControl.perform(contList, l_Default_Error_Handler).run();
           }
-        /* AUTOMANUAL.cbl:138: PERFORM */
-        for (;;)
-          {
-            if (((long)f_OLD_STS.compareTo (CobolConstant.zero) != 0L))
-              break;
-            {
-              /* AUTOMANUAL.cbl:139: MOVE */
-              {
-                b_OLD_REC.fillBytes (32, 50000);
-              }
-              /* AUTOMANUAL.cbl:140: READ */
-              CobolRuntimeException.code = 0;
-              {
-                h_OLDFILE.read (0, f_OLD_STS, 1);
-              }
-              if (CobolRuntimeException.code != 0)
-                {
-                  if (CobolRuntimeException.code == 0x0501)
-                    {
-                      {
-                        /* AUTOMANUAL.cbl:142: CONTINUE */
-                        {
-                          ;
-                        }
-                      }
-                    }
-                  else
-                    {
-                      /* PERFORM Default Error Handler */
-                      CobolControl.perform(contList, l_Default_Error_Handler).run();
-                    }
-                }
-              else
-                {
-                  {
-                    /* AUTOMANUAL.cbl:144: MOVE */
-                    {
-                      b_NEW_REC.setBytes (b_OLD_REC, 50000);
-                    }
-                    /* AUTOMANUAL.cbl:145: WRITE */
-                    CobolRuntimeException.code = 0;
-                    {
-                      h_NEWFILE.write (f_NEW_REC, 2162689, f_NEW_STS);
-                    }
-                    if (CobolRuntimeException.code != 0)
-                      {
-                        /* PERFORM Default Error Handler */
-                        CobolControl.perform(contList, l_Default_Error_Handler).run();
-                      }
-                  }
-                }
-            }
-          }
-        /* AUTOMANUAL.cbl:151: WRITE */
+        /* AUTOMANUAL.cbl:142: WRITE */
         CobolRuntimeException.code = 0;
         {
           f_NEW_REC.moveFrom (c_17);
@@ -498,11 +445,11 @@ public class AUTOMANUAL implements CobolRunnable {
             /* PERFORM Default Error Handler */
             CobolControl.perform(contList, l_Default_Error_Handler).run();
           }
-        /* AUTOMANUAL.cbl:154: MOVE */
+        /* AUTOMANUAL.cbl:145: MOVE */
         {
           b_NEW_REC.fillBytes (32, 50000);
         }
-        /* AUTOMANUAL.cbl:155: WRITE */
+        /* AUTOMANUAL.cbl:146: WRITE */
         CobolRuntimeException.code = 0;
         {
           h_NEWFILE.write (f_NEW_REC, 2162689, f_NEW_STS);
@@ -512,11 +459,11 @@ public class AUTOMANUAL implements CobolRunnable {
             /* PERFORM Default Error Handler */
             CobolControl.perform(contList, l_Default_Error_Handler).run();
           }
-        /* AUTOMANUAL.cbl:156: MOVE */
+        /* AUTOMANUAL.cbl:147: MOVE */
         {
           b_NEW_REC.fillBytes (32, 50000);
         }
-        /* AUTOMANUAL.cbl:157: STRING */
+        /* AUTOMANUAL.cbl:148: STRING */
         {
           CobolString.stringInit (f_NEW_REC, 0);
           CobolString.stringDelimited (0);
@@ -531,7 +478,7 @@ public class AUTOMANUAL implements CobolRunnable {
           CobolString.stringAppend (c_13);
           CobolString.stringFinish ();
         }
-        /* AUTOMANUAL.cbl:164: WRITE */
+        /* AUTOMANUAL.cbl:155: WRITE */
         CobolRuntimeException.code = 0;
         {
           h_NEWFILE.write (f_NEW_REC, 2162689, f_NEW_STS);
@@ -541,7 +488,7 @@ public class AUTOMANUAL implements CobolRunnable {
             /* PERFORM Default Error Handler */
             CobolControl.perform(contList, l_Default_Error_Handler).run();
           }
-        /* AUTOMANUAL.cbl:167: WRITE */
+        /* AUTOMANUAL.cbl:158: WRITE */
         CobolRuntimeException.code = 0;
         {
           f_NEW_REC.moveFrom (c_19);
@@ -552,17 +499,17 @@ public class AUTOMANUAL implements CobolRunnable {
             /* PERFORM Default Error Handler */
             CobolControl.perform(contList, l_Default_Error_Handler).run();
           }
-        /* AUTOMANUAL.cbl:168: PERFORM */
+        /* AUTOMANUAL.cbl:159: PERFORM */
         for (;;)
           {
             if (((long)f_OLD_STS.compareTo (CobolConstant.zero) != 0L))
               break;
             {
-              /* AUTOMANUAL.cbl:169: MOVE */
+              /* AUTOMANUAL.cbl:160: MOVE */
               {
                 b_OLD_REC.fillBytes (32, 50000);
               }
-              /* AUTOMANUAL.cbl:170: READ */
+              /* AUTOMANUAL.cbl:161: READ */
               CobolRuntimeException.code = 0;
               {
                 h_OLDFILE.read (0, f_OLD_STS, 1);
@@ -572,7 +519,7 @@ public class AUTOMANUAL implements CobolRunnable {
                   if (CobolRuntimeException.code == 0x0501)
                     {
                       {
-                        /* AUTOMANUAL.cbl:172: CONTINUE */
+                        /* AUTOMANUAL.cbl:163: CONTINUE */
                         {
                           ;
                         }
@@ -587,11 +534,11 @@ public class AUTOMANUAL implements CobolRunnable {
               else
                 {
                   {
-                    /* AUTOMANUAL.cbl:174: MOVE */
+                    /* AUTOMANUAL.cbl:165: MOVE */
                     {
                       b_NEW_REC.setBytes (b_OLD_REC, 50000);
                     }
-                    /* AUTOMANUAL.cbl:175: WRITE */
+                    /* AUTOMANUAL.cbl:166: WRITE */
                     CobolRuntimeException.code = 0;
                     {
                       h_NEWFILE.write (f_NEW_REC, 2162689, f_NEW_STS);
@@ -605,7 +552,7 @@ public class AUTOMANUAL implements CobolRunnable {
                 }
             }
           }
-        /* AUTOMANUAL.cbl:179: CLOSE */
+        /* AUTOMANUAL.cbl:170: CLOSE */
         {
           CobolRuntimeException.code = 0;
           {
@@ -617,7 +564,7 @@ public class AUTOMANUAL implements CobolRunnable {
               CobolControl.perform(contList, l_Default_Error_Handler).run();
             }
         }
-        /* AUTOMANUAL.cbl:180: CLOSE */
+        /* AUTOMANUAL.cbl:171: CLOSE */
         {
           CobolRuntimeException.code = 0;
           {
@@ -636,7 +583,7 @@ public class AUTOMANUAL implements CobolRunnable {
     /* MAIN-900 */
     new CobolControl(l_MAIN_CONTROL__MAIN_900, CobolControl.LabelType.label) {
       public Optional<CobolControl> run() throws CobolRuntimeException, CobolGoBackException, CobolStopRunException {
-        /* AUTOMANUAL.cbl:182: STOP */
+        /* AUTOMANUAL.cbl:173: STOP */
         {
           CobolStopRunException.throwException (b_RETURN_CODE.intValue());
         }

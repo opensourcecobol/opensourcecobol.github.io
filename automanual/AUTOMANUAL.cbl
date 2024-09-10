@@ -135,16 +135,7 @@
       *3行目
       *<!--navi end1-->を挿入する
            WRITE NEW-REC FROM "<!--navi end1-->".
-           PERFORM UNTIL (OLD-STS NOT = ZERO)
-               MOVE SPACE TO OLD-REC
-               READ OLDFILE NEXT
-                 AT END
-                    CONTINUE
-                 NOT AT END
-                    MOVE OLD-REC TO NEW-REC
-                    WRITE NEW-REC
-               END-READ
-           END-PERFORM.
+           
 
       *最後から3行目
       *<!--navi start2-->を挿入する

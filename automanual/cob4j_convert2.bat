@@ -148,3 +148,4 @@ java AUTODELETE 8-3-1.md
 java AUTODELETE 9-1.md
 java AUTODELETE 9-2.md
 java AUTODELETE credit.md
+java AUTODELETE TOC.md

@@ -147,4 +147,4 @@ java AUTOMANUAL 8-2-4.md 8-2-3.md 8-3-1.md
 java AUTOMANUAL 8-3-1.md 8-2-4.md 9-1.md
 java AUTOMANUAL 9-1.md 8-3-1.md 9-2.md
 java AUTOMANUAL 9-2.md 9-1.md credit.md
-java AUTOMANUAL 9-1.md credit.md none
+java AUTOMANUAL credit.md 9-2.md none
