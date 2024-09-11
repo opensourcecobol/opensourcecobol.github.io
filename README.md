@@ -10,7 +10,11 @@ COBOL文法の完全日本語マニュアル『opensource COBOL Programmer's Gui
 初版は原著をそのまま翻訳した内容です。第二版では、opensource COBOL で追加実装した日本語機能や新機能の説明を追加しました。
 第三版以降で、新製品である opensource COBOL 4J についての説明を追加していく予定です。
 
-[<img width="300" src="https://github.com/opensourcecobol/opensourcecobol.github.io/assets/5810740/d8108368-9a9d-4df8-8cd9-9873d0f5d01d">](/guides/opensourceCOBOLProgrammersGuide.pdf)[<img width="300" src="image.png">](/markdown/TOC.md)
+| PDF版 | HTML版 |
+| --- | --- |
+| [<img width="300" src="https://github.com/opensourcecobol/opensourcecobol.github.io/assets/5810740/d8108368-9a9d-4df8-8cd9-9873d0f5d01d">](/guides/opensourceCOBOLProgrammersGuide.pdf) | [<img width="300" src="image.png">](/markdown/TOC.md) |
+
+
 
 原著はGary Cultlerさんの[『OpenCOBOL Programmer's Guide』](https://gnucobol.sourceforge.io/guides/OpenCOBOL%20Programmers%20Guide.pdf)です。私たちの opensource COBOLのフォーク元である OpenCOBOLのCOBOL文法や使い方のマニュアルです。
 
