@@ -1,4 +1,3 @@
-# <img width="40" src="https://momo2584.github.io/opensourcecobol.github.io/markdown/opensourcecobol.png">opensource COBOL Programmer’s Guide
 
 COBOL文法の完全日本語マニュアル『opensource COBOL Programmer's Guide』を公開しています。
 
