@@ -1,5 +1,5 @@
        IDENTIFICATION              DIVISION.
-       PROGRAM-ID.                 AUTODELETE.
+       PROGRAM-ID.                 AUTODELETE_2.
        AUTHOR.                     M SHIMADA.
        DATE-WRITTEN.               2024-09-04.
       ******************************************************************
@@ -30,14 +30,15 @@
       *-------------------------------------*
        WORKING-STORAGE             SECTION.
       *-------------------------------------*
-       77  OLD-STS                 PIC X(02).
-       77  NEW-STS                 PIC X(02).
-       77  OLD-FILE-PATH           PIC X(256).
-       77  NEW-FILE-PATH           PIC X(256).
-       77  MD-NAME                 PIC X(250).
-      *ファイルの終端を示すフラグ
-       77  WS-END-OF-FILE          PIC X VALUE 'N'.
-       77  WS-IN-NAVI-SECTION      PIC X VALUE 'N'.
+       01  OLD-STS                 PIC X(02).
+       01  NEW-STS                 PIC X(02).
+       01  OLD-FILE-PATH           PIC X(256).
+       01  NEW-FILE-PATH           PIC X(256).
+       01  MD-NAME                 PIC X(250).
+       01  WS-END-OF-FILE          PIC X VALUE 'N'.
+       01  WS-IN-NAVI-SECTION      PIC X VALUE 'N'.
+       01  F-SKIP                  PIC 9(03).
+       01  END-FLG                 PIC 9(01).
       ******************************************************************
        PROCEDURE                   DIVISION.
       ******************************************************************
@@ -50,11 +51,11 @@
       *変換前後のファイルをフォルダ分けするためディレクトリを追加する
            MOVE SPACE TO OLD-FILE-PATH.
            STRING   "old_delete/"      DELIMITED BY SIZE
-                    MD-NAME            DELIMITED BY SPACE
+                    MD-NAME      DELIMITED BY SPACE
                     INTO   OLD-FILE-PATH.
            MOVE SPACE TO NEW-FILE-PATH.
            STRING   "new_delete/"      DELIMITED BY SIZE
-                    MD-NAME            DELIMITED BY SPACE
+                    MD-NAME      DELIMITED BY SPACE
                     INTO   NEW-FILE-PATH.
 
            IF OLD-FILE-PATH = SPACE GO TO MAIN-900.
@@ -62,27 +63,27 @@
            OPEN  INPUT OLDFILE
                  OUTPUT NEWFILE.
        MAIN-100.
+      *<!--navi start-->から<!--navi end-->の記述を削除する
            PERFORM UNTIL WS-END-OF-FILE = 'Y'
-      *1行ずつ読み込む
                READ OLDFILE INTO OLD-REC
-      *終わったら、ファイルの終端を示すフラグを'Y'にする
                    AT END
                        MOVE 'Y' TO WS-END-OF-FILE
                    NOT AT END
-      *<!--navi start1and2-->から<!--navi end1and2-->の記述を削除する
-                       IF OLD-REC = "<!--navi start1-->"
-                          OR "<!--navi start2-->"
-                          MOVE 'Y' TO WS-IN-NAVI-SECTION
-                          EXIT PERFORM CYCLE
-                       END-IF
-                       IF OLD-REC = "<!--navi end1-->"
-                          OR "<!--navi end2-->"
-                          MOVE 'N' TO WS-IN-NAVI-SECTION
-                          EXIT PERFORM CYCLE
-                       END-IF
-      *書き込み
-                       IF WS-IN-NAVI-SECTION = 'N'
-                           WRITE NEW-REC FROM OLD-REC
+                       IF OLD-REC = "<!--navi start-->"
+                           MOVE 'Y' TO WS-IN-NAVI-SECTION
+                       ELSE IF OLD-REC = "<!--navi end-->"
+                           MOVE 'N' TO WS-IN-NAVI-SECTION
+                       ELSE IF WS-IN-NAVI-SECTION = 'N'
+      *「ページトップへ」を削除
+                            IF F-SKIP = 0
+                            INSPECT OLD-REC TALLYING F-SKIP FOR 
+                       ALL X"E3839AE383BCE382B8E38388E38383E38397E381B8"
+                               IF F-SKIP > 0
+                                   MOVE 'Y' TO WS-IN-NAVI-SECTION
+                               ELSE
+                                   WRITE NEW-REC FROM OLD-REC
+                               END-IF
+                            END-IF
                        END-IF
                END-READ
            END-PERFORM. 

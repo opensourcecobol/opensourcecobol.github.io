@@ -24,9 +24,14 @@
        FILE                        SECTION.
       *-------------------------------------*
        FD  OLDFILE.
+       78  C-OLD-REC-START-1       VALUE "<!--navi start1-->".
+       78  C-OLD-REC-START-2       VALUE "<!--navi start2-->".
        01  OLD-REC                 PIC X(50000).
+           88 OLD-REC-START-1        VALUE C-OLD-REC-START-1.
+           88 OLD-REC-START-2        VALUE C-OLD-REC-START-2.
+                          
        FD  NEWFILE.
-       01  NEW-REC                 PIC X(50000).
+       77  NEW-REC                 PIC X(50000).
       *-------------------------------------*
        WORKING-STORAGE             SECTION.
       *-------------------------------------*
@@ -57,9 +62,11 @@
                     MD-NAME            DELIMITED BY SPACE
                     INTO   NEW-FILE-PATH.
 
-           IF OLD-FILE-PATH = SPACE GO TO MAIN-900.
+           IF OLD-FILE-PATH = SPACE
+               GO TO MAIN-900
+           END-IF.
 
-           OPEN  INPUT OLDFILE
+           OPEN  INPUT  OLDFILE
                  OUTPUT NEWFILE.
        MAIN-100.
            PERFORM UNTIL WS-END-OF-FILE = 'Y'
@@ -69,19 +76,22 @@
                    AT END
                        MOVE 'Y' TO WS-END-OF-FILE
                    NOT AT END
-      *<!--navi start1and2-->から<!--navi end1and2-->の記述を削除する
-                       IF OLD-REC = "<!--navi start1-->"
-                          OR "<!--navi start2-->"
-                          MOVE 'Y' TO WS-IN-NAVI-SECTION
-                          EXIT PERFORM CYCLE
+      *<!--navi start1-->から<!--navi end1-->の書き込みをスキップする
+      *                IF OLD-REC = "<!--navi start1-->"
+      *                    OR "<!--navi start2-->"
+                       IF OLD-REC-START-1 OR OLD-REC-START-2
+                           MOVE 'Y' TO WS-IN-NAVI-SECTION
+      *PERFORMの直下、READへ
+                           EXIT PERFORM CYCLE
                        END-IF
                        IF OLD-REC = "<!--navi end1-->"
-                          OR "<!--navi end2-->"
-                          MOVE 'N' TO WS-IN-NAVI-SECTION
-                          EXIT PERFORM CYCLE
+                           OR "<!--navi end2-->"
+                           MOVE 'N' TO WS-IN-NAVI-SECTION
+      *PERFORMの直下、READへ
+                           EXIT PERFORM CYCLE
                        END-IF
-      *書き込み
                        IF WS-IN-NAVI-SECTION = 'N'
+      *書き込み
                            WRITE NEW-REC FROM OLD-REC
                        END-IF
                END-READ

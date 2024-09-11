@@ -77,9 +77,7 @@ public class AUTODELETE implements CobolRunnable {
       b_OLD_FILE_PATH.fillBytes(' ', 256);
       b_NEW_FILE_PATH.fillBytes(' ', 256);
       b_MD_NAME.fillBytes(' ', 250);
-      b_WS_END_OF_FILE.setByte(0, 'N');      b_WS_IN_NAVI_SECTION.setByte(0, 'N');      b_F_SKIP.fillBytes('0', 3);
-      b_END_FLG.setByte('0');
-
+      b_WS_END_OF_FILE.setByte(0, 'N');      b_WS_IN_NAVI_SECTION.setByte(0, 'N');
       h_OLDFILE = CobolFileFactory.makeCobolFileInstance(
       /* select_name = */ "OLDFILE",
       /* file_status = */ h_OLDFILE_status,
@@ -180,15 +178,15 @@ public class AUTODELETE implements CobolRunnable {
     /* MAIN-000 */
     new CobolControl(l_MAIN_CONTROL__MAIN_000, CobolControl.LabelType.label) {
       public Optional<CobolControl> run() throws CobolRuntimeException, CobolGoBackException, CobolStopRunException {
-        /* AUTODELETE.cbl:50: ACCEPT */
+        /* AUTODELETE.cbl:49: ACCEPT */
         {
           CobolTerminal.acceptCommandLine (f_MD_NAME);
         }
-        /* AUTODELETE.cbl:52: MOVE */
+        /* AUTODELETE.cbl:51: MOVE */
         {
           b_OLD_FILE_PATH.fillBytes (32, 256);
         }
-        /* AUTODELETE.cbl:53: STRING */
+        /* AUTODELETE.cbl:52: STRING */
         {
           CobolString.stringInit (f_OLD_FILE_PATH, 0);
           CobolString.stringDelimited (0);
@@ -197,11 +195,11 @@ public class AUTODELETE implements CobolRunnable {
           CobolString.stringAppend (f_MD_NAME);
           CobolString.stringFinish ();
         }
-        /* AUTODELETE.cbl:56: MOVE */
+        /* AUTODELETE.cbl:55: MOVE */
         {
           b_NEW_FILE_PATH.fillBytes (32, 256);
         }
-        /* AUTODELETE.cbl:57: STRING */
+        /* AUTODELETE.cbl:56: STRING */
         {
           CobolString.stringInit (f_NEW_FILE_PATH, 0);
           CobolString.stringDelimited (0);
@@ -210,18 +208,18 @@ public class AUTODELETE implements CobolRunnable {
           CobolString.stringAppend (f_MD_NAME);
           CobolString.stringFinish ();
         }
-        /* AUTODELETE.cbl:61: IF */
+        /* AUTODELETE.cbl:60: IF */
         {
           if (((long)f_OLD_FILE_PATH.compareTo (CobolConstant.space) == 0L))
             {
-              /* AUTODELETE.cbl:61: GO TO */
+              /* AUTODELETE.cbl:60: GO TO */
               {
                 if(true) return Optional.of(contList[l_MAIN_CONTROL__MAIN_900                ]);
 
               }
             }
         }
-        /* AUTODELETE.cbl:63: OPEN */
+        /* AUTODELETE.cbl:62: OPEN */
         {
           CobolRuntimeException.code = 0;
           {
@@ -249,13 +247,13 @@ public class AUTODELETE implements CobolRunnable {
     /* MAIN-100 */
     new CobolControl(l_MAIN_CONTROL__MAIN_100, CobolControl.LabelType.label) {
       public Optional<CobolControl> run() throws CobolRuntimeException, CobolGoBackException, CobolStopRunException {
-        /* AUTODELETE.cbl:67: PERFORM */
+        /* AUTODELETE.cbl:65: PERFORM */
         for (;;)
           {
             if (((long)(Byte.toUnsignedInt(b_WS_END_OF_FILE.getByte(0)) - (int)89) == 0L))
               break;
             {
-              /* AUTODELETE.cbl:68: READ */
+              /* AUTODELETE.cbl:67: READ */
               CobolRuntimeException.code = 0;
               {
                 h_OLDFILE.read (0, f_OLD_STS, 1);
@@ -281,73 +279,49 @@ public class AUTODELETE implements CobolRunnable {
                 {
                   b_OLD_REC.setBytes (b_OLDFILE_record, 50000);
                   {
-                    /* AUTODELETE.cbl:72: IF */
+                    /* AUTODELETE.cbl:73: IF */
                     {
-                      if (((long)f_OLD_REC.compareTo (c_3) == 0L))
+                      if ((((long)f_OLD_REC.compareTo (c_3) == 0L) || ((long)f_OLD_REC.compareTo (c_4) == 0L)))
                         {
-                          /* AUTODELETE.cbl:73: MOVE */
+                          /* AUTODELETE.cbl:75: MOVE */
                           {
                             b_WS_IN_NAVI_SECTION.setByte(89);
                           }
-                        }
-                      else
-                        {
-                          /* AUTODELETE.cbl:74: IF */
+                          /* AUTODELETE.cbl:76: EXIT */
                           {
-                            if (((long)f_OLD_REC.compareTo (c_4) == 0L))
-                              {
-                                /* AUTODELETE.cbl:75: MOVE */
-                                {
-                                  b_WS_IN_NAVI_SECTION.setByte(78);
-                                }
-                              }
-                            else
-                              {
-                                /* AUTODELETE.cbl:76: IF */
-                                {
-                                  if (((long)(Byte.toUnsignedInt(b_WS_IN_NAVI_SECTION.getByte(0)) - (int)78) == 0L))
-                                    {
-                                      /* AUTODELETE.cbl:77: IF */
-                                      {
-                                        if (((long)b_F_SKIP.cmpNumdisp (3, 0) == 0L))
-                                          {
-                                            /* AUTODELETE.cbl:78: INSPECT */
-                                            {
-                                              CobolInspect.init (f_OLD_REC, 0);
-                                              CobolInspect.start ();
-                                              CobolInspect.all (f_F_SKIP, c_5);
-                                              CobolInspect.finish ();
-                                            }
-                                            /* AUTODELETE.cbl:80: IF */
-                                            {
-                                              if (((long)b_F_SKIP.cmpNumdisp (3, 0) >  0L))
-                                                {
-                                                  /* AUTODELETE.cbl:81: MOVE */
-                                                  {
-                                                    b_WS_IN_NAVI_SECTION.setByte(89);
-                                                  }
-                                                }
-                                              else
-                                                {
-                                                  /* AUTODELETE.cbl:83: WRITE */
-                                                  CobolRuntimeException.code = 0;
-                                                  {
-                                                    b_NEW_REC.setBytes (b_OLD_REC, 50000);
-                                                    h_NEWFILE.write (f_NEW_REC, 2162689, f_NEW_STS);
-                                                  }
-                                                  if (CobolRuntimeException.code != 0)
-                                                    {
-                                                      /* PERFORM Default Error Handler */
-                                                      CobolControl.perform(contList, l_Default_Error_Handler).run();
-                                                    }
-                                                }
-                                            }
-                                          }
-                                      }
-                                    }
-                                }
-                              }
+                            if(true) continue;
                           }
+                        }
+                    }
+                    /* AUTODELETE.cbl:78: IF */
+                    {
+                      if ((((long)f_OLD_REC.compareTo (c_5) == 0L) || ((long)f_OLD_REC.compareTo (c_6) == 0L)))
+                        {
+                          /* AUTODELETE.cbl:80: MOVE */
+                          {
+                            b_WS_IN_NAVI_SECTION.setByte(78);
+                          }
+                          /* AUTODELETE.cbl:81: EXIT */
+                          {
+                            if(true) continue;
+                          }
+                        }
+                    }
+                    /* AUTODELETE.cbl:84: IF */
+                    {
+                      if (((long)(Byte.toUnsignedInt(b_WS_IN_NAVI_SECTION.getByte(0)) - (int)78) == 0L))
+                        {
+                          /* AUTODELETE.cbl:85: WRITE */
+                          CobolRuntimeException.code = 0;
+                          {
+                            b_NEW_REC.setBytes (b_OLD_REC, 50000);
+                            h_NEWFILE.write (f_NEW_REC, 2162689, f_NEW_STS);
+                          }
+                          if (CobolRuntimeException.code != 0)
+                            {
+                              /* PERFORM Default Error Handler */
+                              CobolControl.perform(contList, l_Default_Error_Handler).run();
+                            }
                         }
                     }
                   }
@@ -447,8 +421,6 @@ public class AUTODELETE implements CobolRunnable {
       b_MD_NAME = new CobolDataStorage(250);	/* MD-NAME */
       b_WS_END_OF_FILE = new CobolDataStorage(1);	/* WS-END-OF-FILE */
       b_WS_IN_NAVI_SECTION = new CobolDataStorage(1);	/* WS-IN-NAVI-SECTION */
-      b_F_SKIP = new CobolDataStorage(3);	/* F-SKIP */
-      b_END_FLG = new CobolDataStorage(1);	/* END-FLG */
       b_NEW_REC = b_NEWFILE_record;
       b_OLD_REC = b_OLDFILE_record;
 
@@ -469,7 +441,6 @@ public class AUTODELETE implements CobolRunnable {
       f_OLD_FILE_PATH	= CobolFieldFactory.makeCobolField(256, b_OLD_FILE_PATH, a_1);	/* OLD-FILE-PATH */
       f_NEW_FILE_PATH	= CobolFieldFactory.makeCobolField(256, b_NEW_FILE_PATH, a_1);	/* NEW-FILE-PATH */
       f_MD_NAME	= CobolFieldFactory.makeCobolField(250, b_MD_NAME, a_1);	/* MD-NAME */
-      f_F_SKIP	= CobolFieldFactory.makeCobolField(3, b_F_SKIP, a_2);	/* F-SKIP */
 
       /* End of fields */
 
@@ -478,9 +449,10 @@ public class AUTODELETE implements CobolRunnable {
 
       c_1_old_delete	= CobolFieldFactory.makeCobolField(11, str_0_old_delete, a_1);
       c_2_new_delete	= CobolFieldFactory.makeCobolField(11, str_1_new_delete, a_1);
-      c_3	= CobolFieldFactory.makeCobolField(17, str_2, a_1);
-      c_4	= CobolFieldFactory.makeCobolField(15, str_3, a_1);
-      c_5	= CobolFieldFactory.makeCobolField(21, str_4, a_1);
+      c_3	= CobolFieldFactory.makeCobolField(18, str_2, a_1);
+      c_4	= CobolFieldFactory.makeCobolField(18, str_3, a_1);
+      c_5	= CobolFieldFactory.makeCobolField(16, str_4, a_1);
+      c_6	= CobolFieldFactory.makeCobolField(16, str_5, a_1);
 
     } catch(NullPointerException e) {
       System.out.println("Error - NullpointerException");
@@ -493,7 +465,6 @@ public class AUTODELETE implements CobolRunnable {
     /* Attributes */
 
     a_1 = new CobolFieldAttribute (33, 0, 0, 0, null);
-    a_2 = new CobolFieldAttribute (16, 3, 0, 0, null);
 
   }
 
@@ -510,8 +481,6 @@ public class AUTODELETE implements CobolRunnable {
   private CobolDataStorage b_MD_NAME;	/* MD-NAME */
   private CobolDataStorage b_WS_END_OF_FILE;	/* WS-END-OF-FILE */
   private CobolDataStorage b_WS_IN_NAVI_SECTION;	/* WS-IN-NAVI-SECTION */
-  private CobolDataStorage b_F_SKIP;	/* F-SKIP */
-  private CobolDataStorage b_END_FLG;	/* END-FLG */
   private CobolDataStorage b_NEW_REC;
   private CobolDataStorage b_OLD_REC;
 
@@ -530,7 +499,6 @@ public class AUTODELETE implements CobolRunnable {
   private AbstractCobolField f_OLD_FILE_PATH;	/* OLD-FILE-PATH */
   private AbstractCobolField f_NEW_FILE_PATH;	/* NEW-FILE-PATH */
   private AbstractCobolField f_MD_NAME;	/* MD-NAME */
-  private AbstractCobolField f_F_SKIP;	/* F-SKIP */
 
   /* End of fields */
 
@@ -539,6 +507,7 @@ public class AUTODELETE implements CobolRunnable {
 
   /* Constants */
 
+  private AbstractCobolField c_6;
   private AbstractCobolField c_5;
   private AbstractCobolField c_4;
   private AbstractCobolField c_3;
@@ -547,15 +516,15 @@ public class AUTODELETE implements CobolRunnable {
 
   /* Attributes */
 
-  private CobolFieldAttribute a_2;
   private CobolFieldAttribute a_1;
 
 
 
   /* String literals */
-  public static final byte[] str_4 = CobolUtil.toBytes((byte)0xe3, (byte)0x83, (byte)0x9a, (byte)0xe3, (byte)0x83, (byte)0xbc, (byte)0xe3, (byte)0x82, (byte)0xb8, (byte)0xe3, (byte)0x83, (byte)0x88, (byte)0xe3, (byte)0x83, (byte)0x83, (byte)0xe3, (byte)0x83, (byte)0x97, (byte)0xe3, (byte)0x81, (byte)0xb8);
-  public static final byte[] str_3 = CobolUtil.stringToBytes("<!--navi end-->");
-  public static final byte[] str_2 = CobolUtil.stringToBytes("<!--navi start-->");
+  public static final byte[] str_5 = CobolUtil.stringToBytes("<!--navi end2-->");
+  public static final byte[] str_4 = CobolUtil.stringToBytes("<!--navi end1-->");
+  public static final byte[] str_3 = CobolUtil.stringToBytes("<!--navi start2-->");
+  public static final byte[] str_2 = CobolUtil.stringToBytes("<!--navi start1-->");
   public static final byte[] str_1_new_delete = CobolUtil.stringToBytes("new_delete/");
   public static final byte[] str_0_old_delete = CobolUtil.stringToBytes("old_delete/");
   /* File OLDFILE */
