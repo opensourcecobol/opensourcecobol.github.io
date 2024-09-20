@@ -42,5 +42,6 @@ COBOL文法の完全日本語マニュアル『opensource COBOL Programmer's Gui
 |||「8.1.2. コンパイルオプション」に「-assign_external」と「-free_1col_aster」の項目を追加。|
 |||「8.1.7. 重要な環境変数 表8-4-環境変数コンパイラ」に環境変数「COB_DATE」「COB_IO_ASSUME_REWRITE」「COB_NIBBLE_C_UNSIGNED」「COB_VERBOSE」「OC_EXTEND_CREATES」「OC_IO_CREATES」「OC_USERFH」の項目を追加。|
 |||「8.3.1. 「名前による呼び出し」ルーチン 」に「8.3.1.1. CALL “C$CALLEDBY” USING program-name GIVING status」「8.3.1.7. CALL “C$LIST-DIRECTORY” USING item-1, item-2, item-3」「8.3.1.32. CALL “CBL_OC_KEISEN” USING item-1」を追加。|
+|v3.0.0|2024/9/18|日本語翻訳マニュアル HTML版を公開。|
 
 以上
