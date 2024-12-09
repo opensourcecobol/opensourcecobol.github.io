@@ -188,7 +188,7 @@
             - [8.3.1.1. CALL “C$CALLEDBY” USING program-name GIVING status](8-3-1.md#8311-call-ccalledby-using-program-name-giving-status)
             - [8.3.1.2. CALL “C$CHDIR” USING directory-path, result](8-3-1.md#8312-call-cchdir-using-directory-path-result)
             - [8.3.1.3. CALL “C$COPY” USING src-file-path, dest-file-path, 0](8-3-1.md#8313-call-ccopy-using-src-file-path-dest-file-path-0)
-            - [8.3.1.4. CALL “C$DELETE” USING file-path, 0](8-3-1.md#8313-call-ccopy-using-src-file-path-dest-file-path-0)
+            - [8.3.1.4. CALL “C$DELETE” USING file-path, 0](8-3-1.md#8314-call-cdelete-using-file-path-0)
             - [8.3.1.5. CALL “C$FILEINFO” USING file-path, file-info](8-3-1.md#8315-call-cfileinfo-using-file-path-file-info)
             - [8.3.1.6. CALL “C$JUSTIFY” USING data-item, “justification-type”](8-3-1.md#8316-call-cjustify-using-data-item-justification-type)
             - [8.3.1.7. CALL “C$LIST-DIRECTORY” USING item-1, item-2, item-3](8-3-1.md#8317-call-clist-directory-using-item-1-item-2-item-3)
