@@ -2,6 +2,9 @@
 [前へ](9-2.md)/[目次](https://opensourcecobol.github.io/markdown/TOC.html)/次へ
 <!--navi end1-->
 <br>
+
+# クレジット
+
 opensource COBOL Programmer's Guide
 
 【制作】<br>
