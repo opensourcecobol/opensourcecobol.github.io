@@ -796,7 +796,7 @@ public class AUTOMANUAL implements CobolRunnable {
   public static final byte[] str_13 = CobolUtil.stringToBytes(")");
   public static final byte[] str_12 = CobolUtil.toBytes((byte)0xe6, (byte)0xac, (byte)0xa1, (byte)0xe3, (byte)0x81, (byte)0xb8);
   public static final byte[] str_11_github = CobolUtil.stringToBytes("github.io/markdown/TOC.html");
-  public static final byte[] str_10_https = CobolUtil.stringToBytes("https://momo2584.github.io/opensourcecobol.");
+  public static final byte[] str_10_https = CobolUtil.stringToBytes("https://opensourcecobol.");
   public static final byte[] str_9 = CobolUtil.toBytes((byte)0xe7, (byte)0x9b, (byte)0xae, (byte)0xe6, (byte)0xac, (byte)0xa1);
   public static final byte[] str_8 = CobolUtil.stringToBytes(")/[");
   public static final byte[] str_7 = CobolUtil.stringToBytes("](");

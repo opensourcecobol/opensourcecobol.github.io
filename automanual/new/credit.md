@@ -1,5 +1,5 @@
 <!--navi start1-->
-[前へ](9-2.md)/[目次](https://momo2584.github.io/opensourcecobol.github.io/markdown/TOC.html)/次へ
+[前へ](9-2.md)/[目次](https://opensourcecobol.github.io/markdown/TOC.html)/次へ
 <!--navi end1-->
 <!--navi start2-->
 

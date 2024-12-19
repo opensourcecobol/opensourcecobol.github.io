@@ -90,7 +90,7 @@
                       ")/["           DELIMITED BY SIZE
                       X"E79BAEE6ACA1" DELIMITED BY SIZE
                       "]("            DELIMITED BY SIZE
-                      "https://momo2584.github.io/opensourcecobol."
+                      "https://opensourcecobol."
                                       DELIMITED BY SPACE
                       "github.io/markdown/TOC.html" 
                                       DELIMITED BY SPACE
@@ -107,7 +107,7 @@
                       "/["            DELIMITED BY SIZE
                       X"E79BAEE6ACA1" DELIMITED BY SIZE
                       "]("            DELIMITED BY SIZE
-                      "https://momo2584.github.io/opensourcecobol."
+                      "https://opensourcecobol."
                                       DELIMITED BY SPACE
                       "github.io/markdown/TOC.html" 
                                       DELIMITED BY SPACE
@@ -127,7 +127,7 @@
                       ")/["           DELIMITED BY SIZE
                       X"E79BAEE6ACA1" DELIMITED BY SIZE
                       "]("            DELIMITED BY SIZE
-                      "https://momo2584.github.io/opensourcecobol."
+                      "https://opensourcecobol."
                                       DELIMITED BY SPACE
                       "github.io/markdown/TOC.html" 
                                       DELIMITED BY SPACE

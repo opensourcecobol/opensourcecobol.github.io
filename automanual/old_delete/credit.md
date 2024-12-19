@@ -1,6 +1,10 @@
-<!--navi start-->
-[前へ](9-2.md)/次へ
-<!--navi end-->
+<!--navi start1-->
+[前へ](9-2.md)/[目次](https://opensourcecobol.github.io/markdown/TOC.html)/次へ
+<!--navi end1-->
+<!--navi start2-->
+
+[ページトップへ](credit.md)
+<!--navi end2-->
 <br>
 opensource COBOL Programmer's Guide
 
@@ -30,4 +34,3 @@ OVOL ICTソリューションズ株式会社<br>
 OSSコンソーシアム オープンCOBOLソリューション部会<br>
 URL: [https://www.osscons.jp/osscobol/](https://www.osscons.jp/osscobol/)
 
-[ページトップへ](credit.md)
