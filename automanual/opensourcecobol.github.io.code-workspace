@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../opensourcecobol4j-1.1.1"
+		}
+	],
+	"settings": {
+		"coboleditor.metadata_symbols": [],
+		"coboleditor.metadata_entrypoints": [],
+		"coboleditor.metadata_types": [],
+		"coboleditor.metadata_files": [
+			"1719534595000,tests/cobol85/DB/DB103M.CBL",
+			"1722229028318,automanual/AUTOMANUAL.cbl"
+		],
+		"coboleditor.metadata_knowncopybooks": []
+	}
+}
