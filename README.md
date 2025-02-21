@@ -22,4 +22,4 @@ COBOL文法の完全日本語マニュアル『opensource COBOL Programmer's Gui
 
 
 ## 改訂履歴
-改訂履歴は[こちら](/markdown/history.md)です
+改訂履歴は[こちら](/markdown/history.md)です。
