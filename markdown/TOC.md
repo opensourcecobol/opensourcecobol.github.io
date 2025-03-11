@@ -1,4 +1,6 @@
 目次
+
+[改訂履歴](history.md)
 1. [まえがき](1-1.md)
     - [1.1. opensource COBOLとは](1-1.md#11-opensource-cobolとは)
     - [1.2. COBOL/opensource COBOLの重要機能](1-2-1.md#12-cobolopensource-cobolの重要機能)
