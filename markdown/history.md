@@ -1,3 +1,6 @@
+<!--navi start1-->
+前へ/[目次](https://opensourcecobol.github.io/markdown/TOC.html)/[次へ](1-1.md)
+<!--navi end1-->
 ## 改訂履歴
 
 |版|発行日|改訂詳細|
@@ -26,3 +29,8 @@
 |||「6.1.4.2.5. 比較条件 図 6-12-比較条件構文」を一部修正。|
 
 以上
+
+<!--navi start2-->
+
+[ページトップへ](history.md)
+<!--navi end2-->
