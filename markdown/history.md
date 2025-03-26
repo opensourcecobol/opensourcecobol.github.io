@@ -1,7 +1,7 @@
 <!--navi start1-->
 前へ/[目次](https://opensourcecobol.github.io/markdown/TOC.html)/[次へ](1-1.md)
 <!--navi end1-->
-## 改訂履歴
+# 改訂履歴
 
 |版|発行日|改訂詳細|
 |---|---|---|
