@@ -11,7 +11,7 @@ COBOL文法の完全日本語マニュアル『opensource COBOL Programmer's Gui
 
 | PDF版 | HTML版 |
 | --- | --- |
-| [<img width="300" src="https://github.com/opensourcecobol/opensourcecobol.github.io/assets/5810740/d8108368-9a9d-4df8-8cd9-9873d0f5d01d">](/guides/opensourceCOBOLProgrammersGuide.pdf) | [<img width="300" src="HTML_TOC.png">](/markdown/TOC.md) |
+| [<img width="275" src="PDF_cover.png">](/guides/opensourceCOBOLProgrammersGuide.pdf) | [<img width="300" src="HTML_TOC.png">](/markdown/TOC.md) |
 
 
 
